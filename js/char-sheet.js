@@ -12,7 +12,7 @@ let cassidyAgustus = {
     charName: "Cassidy Agustus",
     charRace: "Gnome",
     charClass: "Druid",
-    proficiencies: ["Medicine", "Perception", "Religion", "Survival", "Athletics"],
+    proficiencies: ["Medicine", "Perception", "Religion", "Survival"],
     profBonus: 2,
     strScore: 10,
     strMod: 0,
@@ -49,6 +49,13 @@ cassidyAgustus.acrobaticsCheck = function (){
     }
 }
 cassidyAgustus.animalHandling = cassidyAgustus.wisMod;
+cassidyAgustus.animalHandlingCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Animal Handling') !== -1){
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.wisMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Total: " + (d20Roll + cassidyAgustus.wisMod);
+    }
+}
 cassidyAgustus.arcana = cassidyAgustus.intMod;
 cassidyAgustus.athletics = cassidyAgustus.strMod;
 cassidyAgustus.athleticsCheck = function (){
@@ -61,17 +68,59 @@ cassidyAgustus.athleticsCheck = function (){
 cassidyAgustus.deception = cassidyAgustus.charMod;
 cassidyAgustus.history = cassidyAgustus.intMod;
 cassidyAgustus.insight = cassidyAgustus.wisMod;
+cassidyAgustus.insightCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Insight') !== -1){
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.wisMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Total: " + (d20Roll + cassidyAgustus.wisMod);
+    }
+}
 cassidyAgustus.intimidation = cassidyAgustus.charMod;
 cassidyAgustus.investigation = cassidyAgustus.intMod;
 cassidyAgustus.medicine = cassidyAgustus.wisMod;
+cassidyAgustus.medicineCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Medicine') !== -1){
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.wisMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Total: " + (d20Roll + cassidyAgustus.wisMod);
+    }
+}
 cassidyAgustus.nature = cassidyAgustus.intMod;
 cassidyAgustus.perception = cassidyAgustus.wisMod;
+cassidyAgustus.perceptionCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Perception') !== -1){
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.wisMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Total: " + (d20Roll + cassidyAgustus.wisMod);
+    }
+}
 cassidyAgustus.performance = cassidyAgustus.charMod;
 cassidyAgustus.persuasion = cassidyAgustus.charMod;
 cassidyAgustus.religion = cassidyAgustus.intMod;
 cassidyAgustus.slightOfHand = cassidyAgustus.dexMod;
+cassidyAgustus.slightOfHandCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Slight of Hand') !== -1){
+        return "Die roll " + d20Roll + " | Dexterity Modifier " + cassidyAgustus.dexMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.dexMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Dexterity Modifier " + cassidyAgustus.dexMod + " | Total: " + (d20Roll + cassidyAgustus.dexMod);
+    }
+}
 cassidyAgustus.stealth = cassidyAgustus.dexMod;
+cassidyAgustus.stealth = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Stealth') !== -1){
+        return "Die roll " + d20Roll + " | Dexterity Modifier " + cassidyAgustus.dexMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.dexMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Dexterity Modifier " + cassidyAgustus.dexMod + " | Total: " + (d20Roll + cassidyAgustus.dexMod);
+    }
+}
 cassidyAgustus.survival = cassidyAgustus.wisMod;
+cassidyAgustus.survivalCheck = function (){
+    if (cassidyAgustus.proficiencies.indexOf('Survival') !== -1){
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Proficiency Bonus " + cassidyAgustus.profBonus + " | Total: " + (d20Roll + cassidyAgustus.wisMod + cassidyAgustus.profBonus);
+    } else {
+        return "Die roll " + d20Roll + " | Wisdom Modifier " + cassidyAgustus.wisMod + " | Total: " + (d20Roll + cassidyAgustus.wisMod);
+    }
+}
 
 
 console.log(cassidyAgustus.athleticsCheck());
