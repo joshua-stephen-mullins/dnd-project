@@ -16,8 +16,9 @@ let cassidyAgustus = {
     profBonus: 2,
     strScore: 10,
     strMod: 0,
-    strCheck: function (){
-        return "Die roll " + d20Roll + " | Strength Modifier " + cassidyAgustus.strMod + " | Total: " + (d20Roll + cassidyAgustus.strMod)},
+    strCheck: function () {
+        return `Die roll ${d20Roll} | Strength Modifier ${cassidyAgustus.strMod} | Total: ${d20Roll + cassidyAgustus.strMod}`
+    },
     dexScore: 12,
     dexMod: 1,
     dexCheck: function (){
