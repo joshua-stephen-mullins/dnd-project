@@ -2,7 +2,7 @@
 
 let cassidyAgustus = {};
     cassidyAgustus.charName = "Cassidy Agustus";
-    cassidyAgustus.charRace = "Gnome";
+    cassidyAgustus.charRace = dwarf;
     cassidyAgustus.charClass = "Druid";
     cassidyAgustus.proficiencies = ["Medicine", "Perception", "Religion", "Survival"];
     cassidyAgustus.profBonus = 2;
@@ -19,7 +19,7 @@ let cassidyAgustus = {};
     cassidyAgustus.charScore = 8;
     cassidyAgustus.charMod = modCalc(cassidyAgustus.charScore);
 
-    // ability checks
+    // ability checks WIP - include
 
     cassidyAgustus.acrobatics = cassidyAgustus.dexMod;
     cassidyAgustus.animalHandling = cassidyAgustus.wisMod;
@@ -38,7 +38,5 @@ let cassidyAgustus = {};
     cassidyAgustus.slightOfHand = cassidyAgustus.dexMod;
     cassidyAgustus.stealth = cassidyAgustus.dexMod;
     cassidyAgustus.survival = cassidyAgustus.wisMod;
-
-
 
 console.log(acrobaticsCheck(cassidyAgustus));
