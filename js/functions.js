@@ -193,3 +193,13 @@ function survivalCheck(charName){
     }
 }
 //</editor-fold>
+
+// weapon attacks
+
+function daggerAttack(charName){
+    if (charName.proficiencies.indexOf(simpleWeapons) !== -1){
+        return `Die roll ${d20Roll} | Dexterity Modifier ${charName.dexMod} | Proficiency Bonus ${charName.profBonus} | Total:  ${(d20Roll + charName.dexMod + charName.profBonus)}`;
+    } else {
+        return `Die roll ${d20Roll} | Dexterity Modifier ${charName.dexMod} | Total:  ${(d20Roll + charName.dexMod)}`;
+    }
+}
