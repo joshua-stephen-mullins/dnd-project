@@ -1,7 +1,5 @@
 "use strict";
 
-let dwarf = {};
-        dwarf.speed = 25;
 
 
 

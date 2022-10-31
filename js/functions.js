@@ -20,6 +20,13 @@ function isProficient(charName, checkName) {
     }
 }
 
+// function to reassign ability scores
+function addAbilityScore(abilityScore, amount){
+    return charName.push(charName.abilityScore = charName.abilityScore + amount);
+}
+
+//
+
 //<editor-fold desc="Ability Check Functions">
 function strCheck(charName) {
     return `Die roll ${d20Roll} | Strength Modifier ${charName.strMod} | Total: ${d20Roll + charName.strMod}`
