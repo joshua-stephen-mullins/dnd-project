@@ -2,20 +2,22 @@ main {
     display: flex;
 }
 
-.charIcons {
+section {
     border: 1px black solid;
     resize: both;
     overflow: auto;
+    border-radius: 20px;
 }
 
-.battleMap {
-    border: 1px black solid;
-    resize: both;
-    overflow: auto;
+#charIcons {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.chat {
-    border: 1px black solid;
-    resize: both;
-    overflow: auto;
+#battleMap {
+
+}
+
+#chat {
+
 }
