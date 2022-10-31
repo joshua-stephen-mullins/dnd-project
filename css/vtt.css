@@ -1,0 +1,21 @@
+main {
+    display: flex;
+}
+
+.charIcons {
+    border: 1px black solid;
+    resize: both;
+    overflow: auto;
+}
+
+.battleMap {
+    border: 1px black solid;
+    resize: both;
+    overflow: auto;
+}
+
+.chat {
+    border: 1px black solid;
+    resize: both;
+    overflow: auto;
+}
