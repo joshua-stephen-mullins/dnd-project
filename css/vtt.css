@@ -1,5 +1,6 @@
 main {
     display: flex;
+    flex-wrap: wrap;
 }
 
 section {
@@ -7,11 +8,21 @@ section {
     resize: both;
     overflow: auto;
     border-radius: 20px;
+    margin: 10px;
 }
 
 #charIcons {
     display: flex;
     flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+}
+
+.charIcon {
+    margin: 10px;
+    border: blue 1px solid;
+    border-radius: 100%;
+    padding: 5px;
 }
 
 #battleMap {
@@ -19,5 +30,7 @@ section {
 }
 
 #chat {
-
+    width: 20%;
+    height: 90%;
+    content: '';
 }
