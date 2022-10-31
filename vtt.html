@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>VTT</title>
-  <link rel="stylesheet" href="css/vtt.css">
+    <link rel="stylesheet" href="css/vtt.css">
+    <script src="https://kit.fontawesome.com/2a42ed463e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <main>
-  <section  id="charIcons">
-      <p class="charIcon">1</p>
-      <p class="charIcon">2</p>
-      <p class="charIcon">3</p>
-      <p class="charIcon">4</p>
-      <p class="charIcon">5</p>
-  </section>
-  <section id="battleMap"></section>
-  <section id="chat"></section>
+    <section id="charIcons">
+        <p class="charIcon">1</p>
+        <p class="charIcon">2</p>
+        <p class="charIcon">3</p>
+        <p class="charIcon">4</p>
+        <p class="charIcon">5</p>
+    </section>
+    <section id="battleMap"></section>
+    <section id="chat">
+        <form action="post">
+            <label for="chatInput"></label>
+            <input type="text" id="chatInput">
+            <button type="submit"><i class="fa-solid fa-arrow-up"></i></button>
+        </form>
+    </section>
 </main>
 </body>
 </html>

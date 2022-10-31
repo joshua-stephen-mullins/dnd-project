@@ -34,3 +34,8 @@ section {
     height: 90%;
     content: '';
 }
+
+#chatInput {
+    margin: auto;
+    width: 75%;
+}
