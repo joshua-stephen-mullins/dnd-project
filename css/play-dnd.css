@@ -3,10 +3,10 @@
 }
 
 body {
-    background-image: url("../img/pixel-sky.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-image: url("../img/pixel-sky.png");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
 }
 
 .font-press {
@@ -17,9 +17,9 @@ body {
     font-family: 'VT323', monospace;
 }
 
-.pixel-box {
-    /*box-shadow: -15px 0 0 0 black,*/
-    /*            15px 0 0 0 black,*/
-    /*            0 -15px 0 0 black,*/
-    /*            0 15px 0 0 black;*/
-}
+/*.pixel-box {*/
+/*    box-shadow: -15px 0 0 0 black,*/
+/*                15px 0 0 0 black,*/
+/*                0 -15px 0 0 black,*/
+/*                0 15px 0 0 black;*/
+/*}*/
