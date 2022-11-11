@@ -36,18 +36,22 @@ html, body {
 
 
 
-/*carousel button positioning*/
-.carousel {
-    position: relative;
-}
-.carousel-control-prev , .carousel-control-next {
-    position: absolute;
-    top: 14%;
-    transform: TranslateY(-50%);
-}
-.carousel-control-prev {
-    right: auto;
-}
-.carousel-control-next {
-    left: auto;
+/*carousel button positioning and size*/
+/*.carousel {*/
+/*    position: relative;*/
+/*}*/
+/*.carousel-control-prev , .carousel-control-next {*/
+/*    position: absolute;*/
+/*    top: -5%;*/
+/*    transform: TranslateY(-50%);*/
+/*    height: 5%;*/
+/*}*/
+/*.carousel-control-prev {*/
+/*    right: 50em;*/
+/*}*/
+/*.carousel-control-next {*/
+/*    left: auto;*/
+/*}*/
+.carousel-control-prev i, .carousel-control-next i {
+    font-size: 3em;
 }

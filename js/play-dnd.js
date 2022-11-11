@@ -16,6 +16,9 @@ function activateGrasslandsStyle (){
     console.log(navbarElement);
     navbarElement.style.backgroundColor = '#efb73f';
     navbarElement.classList.remove('bg-light')
+
+    let styleDropdown = document.getElementById('styleDropdown');
+    styleDropdown.style.backgroundColor = '#ab6e03';
 }
 let grasslandsStyle = document.getElementById('styleGrassland');
 grasslandsStyle.addEventListener('click', activateGrasslandsStyle);
