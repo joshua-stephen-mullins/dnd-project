@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta charset="UTF-8">
-    <title>PLAY DND</title>
+    <title>PLAY DND - Choose Race</title>
+    <link rel="icon" href="img/dice-d20-solid.svg">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -19,7 +20,8 @@
     <!--    navbar-->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid text-end">
-            <a class="navbar-brand font-press" href="#">PLAY DND <i class="fa-solid fa-dice-d20"></i></a>
+            <a class="navbar-brand font-press" href="#">PLAY DND</a>
+            <i class="fa-solid fa-dice-d20 fs-3"></i>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,11 +32,10 @@
                     <a class="nav-link" href="#">Characters</a>
                     <a class="nav-link" href="#">New Character</a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Page Style
                         </a>
-                        <ul class="dropdown-menu" id="styleDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" id='styleGrassland' href="#">Grasslands</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -67,9 +68,9 @@
                                         <div class="carousel-item active">
                                             <!--                                    dwarf card beginning-->
                                             <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
-                                                <h3 class="font-press text-decoration-underline mt-5">Hill
+                                                <h3 class="font-press text-decoration-underline mt-5 mb-3">Hill
                                                     Dwarf</h3>
-                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center">
+                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
                                                     <div class="col-6 p-0">
                                                         <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                              class="card-img-top"
@@ -138,9 +139,9 @@
                                         <!--                                    elf card beginning-->
                                         <div class="carousel-item">
                                             <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
-                                                <h3 class="font-press text-decoration-underline mt-5">High
+                                                <h3 class="font-press text-decoration-underline mt-5 mb-3">High
                                                     Elf</h3>
-                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center">
+                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
                                                     <div class="col-6 p-0">
                                                         <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                              class="card-img-top"
@@ -231,8 +232,8 @@
                                     <!--                                    halfling card beginning-->
                                         <div class="carousel-item">
                                             <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
-                                                <h3 class="font-press text-decoration-underline mt-5">Lightfoot Halfling</h3>
-                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center">
+                                                <h3 class="font-press text-decoration-underline mt-5 mb-3">Lightfoot Halfling</h3>
+                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
                                                     <div class="col-6 p-0">
                                                         <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                              class="card-img-top"
@@ -293,6 +294,37 @@
                                                         obscured only by a creature that is at least one size larger
                                                         than
                                                         you.</p>
+                                                </div>
+                                                <div class="pixelButtonContainer">
+                                                    <div class="pixel"><p>Submit</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!--                                        halfling card ends-->
+                                    <!--                                    human card beginning-->
+                                        <div class="carousel-item">
+                                            <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
+                                                <h3 class="font-press text-decoration-underline mt-5 mb-3">Human</h3>
+                                                <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
+                                                    <div class="col-6 p-0">
+                                                        <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                             class="card-img-top"
+                                                             alt="Human Male">
+                                                    </div>
+                                                    <div class="col-6 p-0">
+                                                        <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                             class="card-img-top"
+                                                             alt="Human Female">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body col-md-5 col-lg-6">
+                                                    <p class="card-text font-VT323">It’s hard to make generalizations about humans, but your human character has these traits.
+                                                        <p>Ability Score Increase. Your ability scores each increase by 1.</p>
+                                                    <p>Age. Humans reach adulthood in their late teens and live less than a century.</p>
+                                                    <p>Alignment. Humans tend toward no particular alignment. The best and the worst are found among them.</p>
+                                                    <p>Size. Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.</p>
+                                                    <p>Speed. Your base walking speed is 30 feet.</p>
+                                                    <p>Languages. You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.</p>
                                                 </div>
                                                 <div class="pixelButtonContainer">
                                                     <div class="pixel"><p>Submit</p></div>
