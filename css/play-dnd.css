@@ -3,10 +3,6 @@
 }
 
 body {
-    /*background-image: url("../img/pixel-sky.png");*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
     font-family: 'VT323', monospace;
 }
 
@@ -23,35 +19,18 @@ html, body {
     font-family: 'VT323', monospace;
 }
 
-/*.pixel-box {*/
-/*    box-shadow: -15px 0 0 0 black,*/
-/*                15px 0 0 0 black,*/
-/*                0 -15px 0 0 black,*/
-/*                0 15px 0 0 black;*/
-/*}*/
+.pixel-box {
+    box-shadow: -15px 0 0 0 black,
+                15px 0 0 0 black,
+                0 -15px 0 0 black,
+                0 15px 0 0 black;
+}
 
 .image-pixeled {
     image-rendering: pixelated;
 }
 
-
-
-/*carousel button positioning and size*/
-/*.carousel {*/
-/*    position: relative;*/
-/*}*/
-/*.carousel-control-prev , .carousel-control-next {*/
-/*    position: absolute;*/
-/*    top: -5%;*/
-/*    transform: TranslateY(-50%);*/
-/*    height: 5%;*/
-/*}*/
-/*.carousel-control-prev {*/
-/*    right: 50em;*/
-/*}*/
-/*.carousel-control-next {*/
-/*    left: auto;*/
-/*}*/
-.carousel-control-prev i, .carousel-control-next i {
-    font-size: 3em;
+.carouselArrow {
+    background: transparent;
+    border: none;
 }

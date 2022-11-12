@@ -30,7 +30,8 @@
                     <a class="nav-link" href="#">Characters</a>
                     <a class="nav-link" href="#">New Character</a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
                             Page Style
                         </a>
                         <ul class="dropdown-menu" id="styleDropdown">
@@ -49,18 +50,23 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="text-center mt-4 mb-4">
-                    <h1 class="font-press">Select a Race</h1>
+                    <div class="row align-items-center justify-content-center">
+                        <button class="carouselArrow col-1 justify-content-end" data-bs-target="#raceCarousel" data-bs-slide="prev">
+                            <img src="img/icons/left-arrow-pixel.png" alt="Left Arrow"></button>
+                        <h1 class="font-press col-8">Select a Race</h1>
+                        <button class="carouselArrow col-1" data-bs-target="#raceCarousel" data-bs-slide="next"><img src="img/icons/right-arrow-pixel.png" alt="Right Arrow"></button>
+                    </div>
                     <div class="row p-0 justify-content-center">
                         <div class="p-0 col-lg-12 col-xl-12">
                             <!--                        carousel begin-->
-                            <div id="carouselExampleControls" class="carousel slide">
+                            <div id="raceCarousel" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <!--                                    dwarf card beginning-->
                                         <div class="bg-transparent border-0 card h-100 p-2 row flex-xs-column flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center">
+                                            <h3 class="font-press text-decoration-underline mt-5">Hill
+                                                Dwarf</h3>
                                             <div class="row justify-content-center col-md-5 col-lg-5 flex-md-column flex-lg-column flex-xl-column align-content-md-center align-content-lg-center align-content-xl-center align-items-xs-center align-items-sm-center">
-                                                <h5 class="card-title font-press text-decoration-underline">Hill
-                                                    Dwarf</h5>
                                                 <div class="col-6 col-md-6 col-lg-6 col-xl-6 p-0">
                                                     <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                          class="card-img-top"
@@ -87,7 +93,7 @@
                                                 <p>Size. Dwarves stand between 4 and 5 feet tall and average about 150
                                                     pounds. Your size is Medium.</p>
                                                 <p>Speed. Your base walking speed is 25 feet. Your speed is not reduced
-                                                by wearing heavy armor.</p>
+                                                    by wearing heavy armor.</p>
                                                 <p>Darkvision. Accustomed to life underground, you have superior vision
                                                     in dark and dim conditions. You can see in dim light within 60 feet
                                                     of you as if it were bright light, and in darkness as if it were dim
@@ -95,7 +101,7 @@
                                                 <p>Dwarven Resilience. You have advantage on saving throws against
                                                     poison, and you have resistance against poison damage.</p>
                                                 <p>Dwarven Combat Training. You have proficiency with the battleaxe,
-                                                handaxe, light hammer, and warhammer.</p>
+                                                    handaxe, light hammer, and warhammer.</p>
                                                 <p>Tool Proficiency. You gain proficiency with the artisan’s tools of
                                                     your choice: smith’s tools, brewer’s supplies, or mason’s tools.</p>
                                                 <p>Stonecunning. Whenever you make an Intelligence (History) check
@@ -115,13 +121,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                        <!--                                        dwarf card ends-->
-                                        <!--                                        elf card begins-->
+                                    <!--                                        dwarf card ends-->
+                                    <!--                                        elf card begins-->
                                     <div class="carousel-item">
                                         <div class="bg-transparent border-0 card h-100 p-2 row flex-xs-column flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center">
+                                            <h3 class="font-press text-decoration-underline  mt-5">High
+                                                Elf</h3>
                                             <div class="row justify-content-center col-md-5 col-lg-5 flex-md-column flex-lg-column flex-xl-column align-content-md-center align-content-lg-center align-content-xl-center align-items-xs-center align-items-sm-center">
-                                                <h5 class="card-title font-press text-decoration-underline">High
-                                                    Elf</h5>
+
                                                 <div class="col-6 col-md-6 col-lg-6 col-xl-6 p-0">
                                                     <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                          class="card-img-top"
@@ -157,7 +164,7 @@
                                                     shades of gray.</p>
                                                 <p>Keen Senses. You have proficiency in the Perception skill.</p>
                                                 <p>Fey Ancestry. You have advantage on saving throws against being
-                                                charmed, and magic can’t put you to sleep.</p>
+                                                    charmed, and magic can’t put you to sleep.</p>
                                                 <p>Trance. Elves don’t need to sleep. Instead, they meditate deeply,
                                                     remaining semiconscious, for 4 hours a day. (The Common word for
                                                     such meditation is “trance.”) While meditating, you can dream after
@@ -191,8 +198,9 @@
                                     <!--                                        halfling card begins-->
                                     <div class="carousel-item">
                                         <div class="bg-transparent border-0 card h-100 p-2 row flex-xs-column flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center">
+                                            <h3 class="font-press text-decoration-underline mt-5">Lightfoot
+                                                Halfling</h3>
                                             <div class="row justify-content-center col-md-5 col-lg-5 flex-md-column flex-lg-column flex-xl-column align-content-md-center align-content-lg-center align-content-xl-center align-items-xs-center align-items-sm-center">
-                                                <h5 class="card-title font-press text-decoration-underline">Lightfoot Halfling</h5>
                                                 <div class="col-6 col-md-6 col-lg-6 col-xl-6 p-0">
                                                     <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
                                                          class="card-img-top"
@@ -205,36 +213,48 @@
                                                 </div>
                                             </div>
                                             <div class="card-body col-md-5 col-lg-6">
-                                                <p class="card-text font-VT323">Your halfling character has a number of traits in common with all other halflings.
-                                                    <p>Ability Score Increase. Your Dexterity score increases by 2.</p>
-                                                <p>Age. A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.</p>
-                                                <p>Alignment. Most halflings are lawful good. As a rule, they are good‑hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.</p>
-                                                <p>Size. Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.
+                                                <p class="card-text font-VT323">Your halfling character has a number of
+                                                    traits in common with all other halflings.
+                                                <p>Ability Score Increase. Your Dexterity score increases by 2.</p>
+                                                <p>Age. A halfling reaches adulthood at the age of 20 and generally
+                                                    lives into the middle of his or her second century.</p>
+                                                <p>Alignment. Most halflings are lawful good. As a rule, they are
+                                                    good‑hearted and kind, hate to see others in pain, and have no
+                                                    tolerance for oppression. They are also very orderly and
+                                                    traditional, leaning heavily on the support of their community and
+                                                    the comfort of their old ways.</p>
+                                                <p>Size. Halflings average about 3 feet tall and weigh about 40 pounds.
+                                                    Your size is Small.
                                                 <p>Speed. Your base walking speed is 25 feet.</p>
-                                                <p>Lucky. When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>
-                                                <p>Brave. You have advantage on saving throws against being frightened. Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours.</p>
-                                                <p>Languages. You can speak, read, and write Common and Halfling. The Halfling language isn’t secret, but halflings are loath to share it with others. They write very little, so they don’t have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.</p>
-                                                    Lightfoot
-                                                <p>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You’re inclined to be affable and get along well with others.</p>
-                                                <p>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.</p>
+                                                <p>Lucky. When you roll a 1 on the d20 for an attack roll, ability
+                                                    check, or saving throw, you can reroll the die and must use the new
+                                                    roll.</p>
+                                                <p>Brave. You have advantage on saving throws against being frightened.
+                                                    Halfling Nimbleness. You can move through the space of any creature
+                                                    that is of a size larger than yours.</p>
+                                                <p>Languages. You can speak, read, and write Common and Halfling. The
+                                                    Halfling language isn’t secret, but halflings are loath to share it
+                                                    with others. They write very little, so they don’t have a rich body
+                                                    of literature. Their oral tradition, however, is very strong. Almost
+                                                    all halflings speak Common to converse with the people in whose
+                                                    lands they dwell or through which they are traveling.</p>
+                                                Lightfoot
+                                                <p>As a lightfoot halfling, you can easily hide from notice, even using
+                                                    other people as cover. You’re inclined to be affable and get along
+                                                    well with others.</p>
+                                                <p>Lightfoots are more prone to wanderlust than other halflings, and
+                                                    often dwell alongside other races or take up a nomadic life.</p>
                                                 <p>Ability Score Increase. Your Charisma score increases by 1.</p>
-                                                <p>Naturally Stealthy. You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>
+                                                <p>Naturally Stealthy. You can attempt to hide even when you are
+                                                    obscured only by a creature that is at least one size larger than
+                                                    you.</p>
 
                                             </div>
                                         </div>
                                     </div>
+                                    <!--                                        halfling card ends-->
                                 </div>
-<!--                                <button class="carousel-control-prev" type="button"-->
-<!--                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">-->
-<!--                                    <i class="fa-solid fa-caret-left text-dark image-pixeled"></i> <span-->
-<!--                                        class="visually-hidden">Previous</span>-->
-<!--                                </button>-->
-<!--                                <button class="carousel-control-next" type="button"-->
-<!--                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">-->
-<!--                                    <i class="fa-solid fa-caret-right text-dark image-pixeled"></i>-->
-<!--                                    <span class="visually-hidden">Next</span>-->
-<!--                                </button>-->
-<!--                            </div>-->
+                            </div>
                             <!--                        carousel end-->
                         </div>
                     </div>
