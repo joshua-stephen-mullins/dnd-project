@@ -12,7 +12,7 @@ html, body {
 }
 
 .font-press {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', monospace;
 }
 
 .font-VT323 {
@@ -21,23 +21,16 @@ html, body {
 
 .pixel-box {
     box-shadow:
-                -10px 0 0 0 black,
-                10px 0 0 0 black,
-                0 -10px 0 0 black,
-                0 10px 0 0 black;
-}
-
-.image-pixeled {
-    image-rendering: pixelated;
+                -8px 0 0 0 black,
+                8px 0 0 0 black,
+                0 -8px 0 0 black,
+                0 8px 0 0 black;
 }
 
 .carouselArrow {
     background: transparent;
     border: none;
 }
-
-
-
 
 /*pixelated CSS box*/
 .pixelButtonContainer {

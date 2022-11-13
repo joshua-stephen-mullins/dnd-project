@@ -18,7 +18,7 @@
 <body>
 <header>
     <!--    navbar-->
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light border-bottom border-3 border-dark">
         <div class="container-fluid text-end">
             <a class="navbar-brand font-press" href="#">PLAY DND</a>
             <i class="fa-solid fa-dice-d20 fs-3"></i>
@@ -32,14 +32,13 @@
                     <a class="nav-link" href="#">Characters</a>
                     <a class="nav-link" href="#">New Character</a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Page Style
                         </a>
-                        <ul class="dropdown-menu styleDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" id='styleGrassland' href="#">Grasslands</a></li>
-                            <li><a class="dropdown-item" href="#">Mountains</a></li>
-                            <li><a class="dropdown-item" href="#">Ocean</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Profile</a>
@@ -47,6 +46,7 @@
             </div>
         </div>
     </nav>
+</header>
     <!--    end navbar-->
     <main>
         <div class="container-fluid">
@@ -64,12 +64,12 @@
                         <div class="p-0 col-lg-12 col-xl-12">
                             <!--                        carousel begin-->
                             <form id="raceSelection">
-                                <div id="raceCarousel" class="carousel slide">
+                                <div id="raceCarousel" class="carousel slide m-5">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <!--                                    dwarf card beginning-->
                                             <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
-                                                <h3 class="font-press text-decoration-underline mt-5 mb-3">Hill
+                                                <h3 class="font-press text-decoration-underline mt-3 mb-3">Hill
                                                     Dwarf</h3>
                                                 <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
                                                     <div class="col-6 p-0">
@@ -91,24 +91,27 @@
                                                         their clans. Dwarves live their long lives with a spirit of good
                                                         and justice, that may only be corrupted by greed. Their
                                                         sturdiness allows them to be more resistant than other classes
-                                                        in combat as well as resist poison. They tend to vary depending
-                                                        on the place they are from:</p>
-
-                                                    <div class="dropdown-center">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            Stonecunning
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <p class="fs-4">Hill Dwarf (PHB)
-                                                        Wis+1</p>
-
-                                                    <p class="fs-4">Wiser than their mountain siblings, they also tend
+                                                        in combat as well as resist poison. Wiser than their mountain
+                                                        siblings, Hill Dwarves also tend
                                                         to be even more sturdy than them, meaning they are able to stand
                                                         more hits before falling in combat.</p>
+
+<!--                                                    potential for adding dropdown menu for racial ability explanations-->
+<!--                                                    <div class="dropdown-center">-->
+<!--                                                        <button class="btn btn-secondary dropdown-toggle" type="button"-->
+<!--                                                                data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                                                            Stonecunning-->
+<!--                                                        </button>-->
+<!--                                                        <ul class="dropdown-menu">-->
+<!--                                                            <li>Whenever you make an Intelligence (History) check-->
+<!--                                                                related to the origin of stonework, you are considered-->
+<!--                                                                proficient in the History skill and add double your-->
+<!--                                                                proficiency bonus to the check, instead of your normal-->
+<!--                                                                proficiency bonus.-->
+<!--                                                            </li>-->
+<!--                                                        </ul>-->
+<!--                                                    </div>-->
+
                                                     <div class="pixelButtonContainer">
                                                         <div class="pixel align-self-center"><p>Submit</p></div>
                                                     </div>
@@ -144,14 +147,8 @@
                                                         they become elders. They make for excellent artists and tend to
                                                         be quite chaotic when it comes to laws. Last but not least, they
                                                         don’t sleep but enter trances for 4 hours a day in which they
-                                                        remain semiconscious. If you are playing an elf, choose between
-                                                        the following subraces:
-
-                                                    <p class="fs-4">High Elf (PHB)
-                                                        Int+1</p>
-
-                                                    <p class="fs-4">High elves are more studious and value art in a
-                                                        greater way than the other subraces. In addition, they master
+                                                        remain semiconscious. High elves are more studious and value art in a
+                                                        greater way than their other elven cousins. In addition, they master
                                                         both longswords and shortswords, as well as shortbows and
                                                         longbows.</p>
                                                     <div class="pixelButtonContainer">
@@ -179,12 +176,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-body col-md-5 col-lg-6">
-                                                    <p class="card-text font-VT323 fs-4">Halflings are isolated, cheerful people who love the commodity of their homes and communities. That’s the main reason most of them don’t abandon their birthplaces (shires). However, a strong sense of curiosity inhabits in most of them, leading these little folk to become adventurers or travel to other places. They are extremely agile, but as a result of their short legs, not as fast as the other races
-
-                                                        <p class="fs-4">Lightfoot (PHB)
-                                                        Cha+1</p>
-
-                                                        <p class="fs-4">These halflings can easily hide behind anything that is higher than themselves and tend to be more charismatic than the rest from their race.</p>
+                                                    <p class="card-text font-VT323 fs-4">Halflings are isolated,
+                                                        cheerful people who love the commodity of their homes and
+                                                        communities. That’s the main reason most of them don’t abandon
+                                                        their birthplaces (shires). However, a strong sense of curiosity
+                                                        inhabits in most of them, leading these little folk to become
+                                                        adventurers or travel to other places. They are extremely agile,
+                                                        but as a result of their short legs, not as fast as the other
+                                                        races. The lightfoot halflings can easily hide behind anything that
+                                                        is higher than themselves and tend to be more charismatic than
+                                                        the rest from their race.</p>
                                                     <div class="pixelButtonContainer">
                                                         <div class="pixel"><p>Submit</p></div>
                                                     </div>
@@ -209,7 +210,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-body col-md-5 col-lg-6">
-                                                    <p class="card-text font-VT323 fs-4">Well… I suppose you are a human, so you should know what we are good at. Absolutely nothing! Or more precisely, a bit in everything. Humans are quite more anxious and eager to adventure than the other races due to their short lives (in comparison with the others).
+                                                    <p class="card-text font-VT323 fs-4">Well… I suppose you are a
+                                                        human, so you should know what we are good at. Absolutely
+                                                        nothing! Or more precisely, a bit in everything. Humans are
+                                                        quite more anxious and eager to adventure than the other races
+                                                        due to their short lives (in comparison with the others).
                                                     </p>
                                                     <div class="pixelButtonContainer">
                                                         <div class="pixel"><p>Submit</p></div>
@@ -228,8 +233,6 @@
             </div>
         </div>
     </main>
-
-</header>
 
 <script src="js/play-dnd.js"></script>
 <!-- JavaScript Bundle with Popper -->

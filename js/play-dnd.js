@@ -19,13 +19,23 @@ function activateGrasslandsStyle (){
 
     let styleDropdown = document.getElementById('styleDropdown');
     // styleDropdown.style.backgroundColor = '#ab6e03';
-
-    let homepageBody = document.getElementById('homepageBody');
-    console.log(homepageBody);
-    homepageBody.style.backgroundColor = 'rgba(252,252,241,0.7)';
-    // homepageBody.style.opacity = '50%';
-    homepageBody.style.color = '#000000';
-    homepageBody.classList.add('pixel-box');
 }
 let grasslandsStyle = document.getElementById('styleGrassland');
 grasslandsStyle.addEventListener('click', activateGrasslandsStyle);
+
+function activateGrasslandsStyleHomePage (){
+    let homepageBody = document.getElementById('homepageBody');
+    homepageBody.style.backgroundColor = 'rgba(252,252,241,0.7)';
+    homepageBody.style.color = '#000000';
+    homepageBody.classList.add('pixel-box');
+}
+grasslandsStyle.addEventListener('click', activateGrasslandsStyleHomePage);
+
+
+function activateGrasslandsStyleRacePage (){
+    let raceCarousel = document.getElementById('raceCarousel');
+    raceCarousel.style.backgroundColor = 'rgba(252,252,241,0.7)';
+    raceCarousel.style.color = '#000000';
+    raceCarousel.classList.add('pixel-box');
+}
+grasslandsStyle.addEventListener('click', activateGrasslandsStyleRacePage);
