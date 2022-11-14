@@ -27,18 +27,17 @@ html, body {
                 0 8px 0 0 black;
 }
 
+/*carousel arrow on race page*/
 .carouselArrow {
     background: transparent;
     border: none;
 }
-
 /*pixelated CSS box*/
 .pixelButtonContainer {
     display: flex;
     justify-content: center;
     text-align: center;
 }
-
 .pixel {
     font-size: 25px;
     color: white;
@@ -52,11 +51,9 @@ html, body {
 
     cursor: pointer;
 }
-
-.pixel:active, .pixel2:active {
+.pixel:active {
     top: 2px;
 }
-
 .pixel {
     line-height: 0;
 
@@ -64,7 +61,6 @@ html, body {
     border-width: 20px;
     border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
 }
-
 .pixel p {
     display: inline-block;
     vertical-align: top;
@@ -88,4 +84,9 @@ html, body {
             radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px),
             radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
             radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
+}
+
+.classContainer img{
+    width: 300px;
+    height: 300px;
 }
