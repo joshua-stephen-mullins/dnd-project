@@ -39,3 +39,13 @@ function activateGrasslandsStyleRacePage (){
     raceCarousel.classList.add('pixel-box');
 }
 grasslandsStyle.addEventListener('click', activateGrasslandsStyleRacePage);
+
+function activateGrasslandsStyleClassPage (){
+    let classCards = document.getElementsByClassName('classCard');
+
+    for (let i = 0; i < classCards.length; i++){
+        classCards[i].style.backgroundColor = 'rgba(252,252,241,0.7)';
+        classCards[i].style.color = '#000000';
+    }
+}
+grasslandsStyle.addEventListener('click', activateGrasslandsStyleClassPage);
