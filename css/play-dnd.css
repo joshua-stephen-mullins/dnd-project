@@ -52,7 +52,7 @@ html, body {
     cursor: pointer;
 }
 .pixel:active {
-    top: 2px;
+    top: 5px;
 }
 .pixel {
     line-height: 0;
@@ -99,5 +99,5 @@ html, body {
     font-size: 2rem;
 }
 .classCardStats {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
