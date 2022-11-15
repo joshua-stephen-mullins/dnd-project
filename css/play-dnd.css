@@ -86,8 +86,8 @@ html, body {
 }
 
 .classContainer img{
-    width: 60%;
-    height: 60%;
+    width: 10rem;
+    height: 10rem;
 }
 .classCardHead {
     width: 40%;
