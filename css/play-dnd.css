@@ -86,17 +86,17 @@ html, body {
 }
 
 .classContainer img{
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
 }
 .classCardHead {
     width: 40%;
 }
 .classCardHeader {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .classCardSubHeader {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .classCardStats {
     font-size: 1.5rem;
