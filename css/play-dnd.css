@@ -56,7 +56,6 @@ html, body {
 }
 .pixel {
     line-height: 0;
-
     border-style: solid;
     border-width: 20px;
     border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
@@ -87,9 +86,18 @@ html, body {
 }
 
 .classContainer img{
-    width: 10em;
-    height: auto;
+    width: 60%;
+    height: 60%;
 }
-.classCard {
-
+.classCardHead {
+    width: 40%;
+}
+.classCardHeader {
+    font-size: 3rem;
+}
+.classCardSubHeader {
+    font-size: 2rem;
+}
+.classCardStats {
+    font-size: 2rem;
 }
