@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <title>PLAY DND</title>
+    <link rel="icon" href="img/dice-d20-solid.svg">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/play-dnd.css">
+    <script src="https://kit.fontawesome.com/2a42ed463e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <!--    navbar-->
+    <nav class="navbar navbar-expand-lg bg-light border-bottom border-3 border-dark">
+        <div class="container-fluid text-end">
+            <a class="navbar-brand font-press" href="#">PLAY DND</a>
+            <i class="fa-solid fa-dice-d20 fs-3"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav text-end font-VT323">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Characters</a>
+                    <a class="nav-link" href="#">New Character</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Page Style
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id='styleGrassland' href="#">Grasslands</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--    end navbar-->
+<main>
+    <!--    nav tabs-->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Race
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Class
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Statistics
+            </button>
+        </li>
+    </ul>
+    <!--    race navtab-->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="race-tab-pane" role="tabpanel" aria-labelledby="race-tab"
+             tabindex="0">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="text-center mt-4 mb-4">
+                        <div class="row align-items-center justify-content-center">
+                            <button class="carouselArrow col-1 justify-content-end" data-bs-target="#raceCarousel"
+                                    data-bs-slide="prev">
+                                <img src="img/icons/left-arrow-pixel.png" alt="Left Arrow"></button>
+                            <h1 class="font-press col-8">Select a Race</h1>
+                            <button class="carouselArrow col-1" data-bs-target="#raceCarousel" data-bs-slide="next"><img
+                                    src="img/icons/right-arrow-pixel.png" alt="Right Arrow"></button>
+                        </div>
+                        <div class="row p-0 justify-content-center">
+                            <div class="p-0 col-lg-12 col-xl-12">
+                                <!--                        carousel begin-->
+                                <form id="raceSelection">
+                                    <div id="raceCarousel" class="carousel slide m-5">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <!--                                    dwarf card beginning-->
+                                                <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
+                                                    <h3 class="font-press text-decoration-underline mt-1 mb-3">Hill
+                                                        Dwarf</h3>
+                                                    <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Dwarf Male">
+                                                        </div>
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Dwarf Female">
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body col-md-5 col-lg-6">
+                                                        <p class="card-text font-VT323 fs-4">Stout, short and
+                                                            hardworking.
+                                                            Those might be the best words to describe a dwarf. Having
+                                                            their
+                                                            race forged by the god Moradin, they were taught of the
+                                                            benefits
+                                                            of hard labor, perfection in their works, and the importance
+                                                            of
+                                                            their clans. Dwarves live their long lives with a spirit of
+                                                            good
+                                                            and justice, that may only be corrupted by greed. Their
+                                                            sturdiness allows them to be more resistant than other
+                                                            classes
+                                                            in combat as well as resist poison. Wiser than their
+                                                            mountain
+                                                            siblings, Hill Dwarves also tend
+                                                            to be even more sturdy than them, meaning they are able to
+                                                            stand
+                                                            more hits before falling in combat.</p>
+
+                                                        <!--                                                    potential for adding dropdown menu for racial ability explanations-->
+                                                        <!--                                                    <div class="dropdown-center">-->
+                                                        <!--                                                        <button class="btn btn-secondary dropdown-toggle" type="button"-->
+                                                        <!--                                                                data-bs-toggle="dropdown" aria-expanded="false">-->
+                                                        <!--                                                            Stonecunning-->
+                                                        <!--                                                        </button>-->
+                                                        <!--                                                        <ul class="dropdown-menu">-->
+                                                        <!--                                                            <li>Whenever you make an Intelligence (History) check-->
+                                                        <!--                                                                related to the origin of stonework, you are considered-->
+                                                        <!--                                                                proficient in the History skill and add double your-->
+                                                        <!--                                                                proficiency bonus to the check, instead of your normal-->
+                                                        <!--                                                                proficiency bonus.-->
+                                                        <!--                                                            </li>-->
+                                                        <!--                                                        </ul>-->
+                                                        <!--                                                    </div>-->
+
+                                                        <div class="pixelButtonContainer">
+                                                            <div class="pixel align-self-center"><p>Submit</p></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--                                        dwarf card ends-->
+                                            <!--                                    elf card beginning-->
+                                            <div class="carousel-item">
+                                                <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
+                                                    <h3 class="font-press text-decoration-underline mt-1 mb-3">High
+                                                        Elf</h3>
+                                                    <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Elf Male">
+                                                        </div>
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Elf Female">
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body col-md-5 col-lg-6">
+                                                        <p class="card-text font-VT323 fs-4">Elves are magical and
+                                                            gracious
+                                                            beings, as well as very close to being eternal. They develop
+                                                            many different attitudes during their life. When young
+                                                            (young
+                                                            being up to 100 years old) they have an adventurous and
+                                                            curious
+                                                            way of thought, making them go for adventures. By the time
+                                                            they
+                                                            reach adulthood their personalities change and become much
+                                                            more
+                                                            peaceful, but don’t discard the idea of going exploring
+                                                            until
+                                                            they become elders. They make for excellent artists and tend
+                                                            to
+                                                            be quite chaotic when it comes to laws. Last but not least,
+                                                            they
+                                                            don’t sleep but enter trances for 4 hours a day in which
+                                                            they
+                                                            remain semiconscious. High elves are more studious and value
+                                                            art in a
+                                                            greater way than their other elven cousins. In addition,
+                                                            they master
+                                                            both longswords and shortswords, as well as shortbows and
+                                                            longbows.</p>
+                                                        <div class="pixelButtonContainer">
+                                                            <div class="pixel"><p>Submit</p></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--                                        elf card ends-->
+                                            <!--                                    halfling card beginning-->
+                                            <div class="carousel-item">
+                                                <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
+                                                    <h3 class="font-press text-decoration-underline mt-1 mb-3">Lightfoot
+                                                        Halfling</h3>
+                                                    <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Halfling Male">
+                                                        </div>
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Halfling Female">
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body col-md-5 col-lg-6">
+                                                        <p class="card-text font-VT323 fs-4">Halflings are isolated,
+                                                            cheerful people who love the commodity of their homes and
+                                                            communities. That’s the main reason most of them don’t
+                                                            abandon
+                                                            their birthplaces (shires). However, a strong sense of
+                                                            curiosity
+                                                            inhabits in most of them, leading these little folk to
+                                                            become
+                                                            adventurers or travel to other places. They are extremely
+                                                            agile,
+                                                            but as a result of their short legs, not as fast as the
+                                                            other
+                                                            races. The lightfoot halflings can easily hide behind
+                                                            anything that
+                                                            is higher than themselves and tend to be more charismatic
+                                                            than
+                                                            the rest from their race.</p>
+                                                        <div class="pixelButtonContainer">
+                                                            <div class="pixel"><p>Submit</p></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--                                        halfling card ends-->
+                                            <!--                                    human card beginning-->
+                                            <div class="carousel-item">
+                                                <div class="bg-transparent border-0 card h-100 p-2 row flex-sm-column flex-md-row flex-lg-row align-items-center align-items-sm-center align-items-md-start align-items-lg-start align-items-xl-start">
+                                                    <h3 class="font-press text-decoration-underline mt-1 mb-3">
+                                                        Human</h3>
+                                                    <div class="row justify-content-center col-md-5 col-lg-5 align-items-center ms-md-1 ms-lg-1 ms-xl-1">
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Human Male">
+                                                        </div>
+                                                        <div class="col-6 p-0">
+                                                            <img src="https://placeholder.pics/svg/300x500/DEDEDE/555555/Character%20Image"
+                                                                 class="card-img-top"
+                                                                 alt="Human Female">
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body col-md-5 col-lg-6">
+                                                        <p class="card-text font-VT323 fs-4">Well… I suppose you are a
+                                                            human, so you should know what we are good at. Absolutely
+                                                            nothing! Or more precisely, a bit in everything. Humans are
+                                                            quite more anxious and eager to adventure than the other
+                                                            races
+                                                            due to their short lives (in comparison with the others).
+                                                        </p>
+                                                        <div class="pixelButtonContainer">
+                                                            <div class="pixel"><p>Submit</p></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--human card ends-->
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--                        carousel end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div class="row justify-content-center m-0">
+                <h1 class="font-press col-8 text-center mt-4 mb-4">Select a Class</h1>
+                <form action="">
+                    <div class="classContainer row col-12 d-flex flex-wrap text-center text-wrap justify-content-evenly m-0 p-0">
+                        <!--barbarian class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/barbarian-pixel.png" class="p-3 ps-0"
+                                     alt="Barbarian Icon">
+                            </div>
+                            <div class="classCardHead w-50 h-auto">
+                                <h1 class="classCardHeader text-decoration-underline">Barbarian</h1>
+                                <h4 class="classCardSubHeader">Path of the Berserker</h4>
+                                <p class="classCardStats">+Str +Con</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Filled with their destructive rage and primal instincts, the barbarian is the class
+                                    you
+                                    choose if
+                                    you
+                                    want to be the meat shield in the front line dealing great amounts of damage. Who
+                                    needs a
+                                    shield
+                                    when you can stand your foes’ puny attacks with your hardened skin and/or high
+                                    evasiveness?</p>
+
+                                <p>Those who follow the path of the berserker become a meat grinding machine when
+                                    enraged. This
+                                    path
+                                    is
+                                    for those barbarians that lose the sense of everything but their foes’ suffering
+                                    during
+                                    battle.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <button type="submit" id="classBarbarian">
+                                        <div class="pixel"><p>Barbarian</p></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--bard class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/bard-pixel.png" class="card-img-top p-2 pb-2" alt="Bard Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Bard</h1>
+                                <h4 class="classCardSubHeader">College of Lore</h4>
+                                <p class="classCardStats">+Cha</p>
+                            </div>
+                            <div class="w-100">
+                                <p>A true jack of all trades; a bard can cover great amounts of ground when speaking
+                                    about what
+                                    they
+                                    are able to do. A performer at heart, an inspiration to its allies, but above all a
+                                    foul-mouthed
+                                    to
+                                    its foes. With its great charisma, his/her voice becomes its greatest weapon.</p>
+
+                                <p>As a storyteller of the history and lore of the world, a bard from the College of
+                                    Lore yearns
+                                    for
+                                    knowledge and stories. Because of their vast knowledge, they know exactly what can
+                                    psychically
+                                    hurt,
+                                    confuse or distract other creatures, as well as can delve into other classes’ spell
+                                    lists.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Bard</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cleric class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/cleric-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Cleric Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Cleric</h1>
+                                <h4 class="classCardSubHeader">Life Domain</h4>
+                                <p class="classCardStats">+Wis</p>
+                            </div>
+                            <div class="w-100">
+                                <p>As well as with bards, clerics cover a wide amount of possibilities depending on the
+                                    god you
+                                    choose
+                                    to follow. They are high spirited servants of their deities and follow their domains
+                                    to
+                                    choose a
+                                    way
+                                    of life. Both a warrior and spellcaster, they are able to cover practically any role
+                                    in a
+                                    party.
+                                    Depending on their subclass, their Channel Divinity ability acts in different ways,
+                                    granting
+                                    direct
+                                    powers from their gods.</p>
+                                <p>Clerics who venerate deities of Life can gain access to more
+                                    healing spells, while also recovering more hit points than any other class would had
+                                    they
+                                    access
+                                    to
+                                    this magic.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Cleric</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--druid class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/druid-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Druid Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Druid</h1>
+                                <h4 class="classCardSubHeader">Circle of the Land</h4>
+                                <p class="classCardStats">+Wis</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Preservers of balance and nature’s warriors, the druids aid their party members by
+                                    using
+                                    great
+                                    support spells, as well as heavy damage dealing ones. They speak the language of the
+                                    flora
+                                    and
+                                    fauna, as well as they can shapeshift into a wide amount of beasts for combat or
+                                    situational
+                                    purposes.</p>
+                                <p>Druids of this circle associate themselves to the land they were trained in, these
+                                    being the
+                                    arctic,
+                                    desert, coast, forest, etc. By attuning to these regions, they can learn different
+                                    spells,
+                                    as
+                                    well
+                                    as benefits associated with the chosen place.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Druid</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fighter class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/fighter-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Fighter Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Fighter</h1>
+                                <h4 class="classCardSubHeader">Champion</h4>
+                                <p class="classCardStats">(+Str or +Dex) +Con
+                            </div>
+                            <div class="w-100">
+                                <p>What does a fighter do best? Well, fight of course. A really versatile class, as it
+                                    can work
+                                    in
+                                    numerous ways. Add the fighting style and you can choose to have a one handed weapon
+                                    accompanied
+                                    by
+                                    a shield, have a two handed weapon, two one handed ones (dual wielding), a ranged
+                                    weapon and
+                                    more!
+                                    Once you’ve got that decided, ready yourself to start demolishing your foes, be it
+                                    with your
+                                    mighty
+                                    strength or dexterous precision!</p>
+                                <p>Champion fighters tend to find their enemies’ weak points and exploit them more often
+                                    than
+                                    the rest, allowing them to do double the amount of possible critical attacks.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Fighter</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--monk class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/monk-pixel.png" class="card-img-top p-2 pb-2" alt="Monk Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Monk</h1>
+                                <h4 class="classCardSubHeader">Way of the Open Hand</h4>
+                                <p class="classCardStats">+Dex +Wis</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Martial artists who can channel their Ki to do impressive feats as if they were magic
+                                    users.
+                                    No
+                                    armor is necessary, just dexterity and the power of your mind. Deflect missiles
+                                    thrown at
+                                    you,
+                                    changing the target to your enemies, move at the speed of the wind and fill your
+                                    foes’ faces
+                                    with a flurry blows.</p>
+                                <p>The classic martial artist, fist punching, jaw breaking kicker. With their flurry of
+                                    blows
+                                    they
+                                    can unstabilize their foes, as well as deal some heavy damage with a succession of
+                                    hits to
+                                    their
+                                    faces.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Monk</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--paladin class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/paladin-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Paladin Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Paladin</h1>
+                                <h4 class="classCardSubHeader">Oath of Devotion</h4>
+                                <p class="classCardStats">+Cha (+Str or +Dex)</p>
+                            </div>
+                            <div class="w-100">
+                                <p>A paladin is a person guided by an oath, their force of will and devotion so strong
+                                    they are
+                                    granted
+                                    the ability to cast spells to smite their foes. They fight for justice and
+                                    righteousness,
+                                    with
+                                    the
+                                    idea of following their oath and ideals to the very end. For this, they use heavy
+                                    armor to
+                                    be
+                                    front
+                                    liners and protect their allies.</p>
+                                <p>Their oath makes them trustworthy companions ready to take a bullet for you if needed
+                                    be.
+                                    These
+                                    paladins swore to protect the weak, and slay evil, while being compassionate with
+                                    those that
+                                    don’t
+                                    truly deserve death. You are to set an example to others and inspire them to follow
+                                    your
+                                    path
+                                    towards a better world.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Paladin</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ranger class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/ranger-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Ranger Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Ranger</h1>
+                                <h4 class="classCardSubHeader">Hunter</h4>
+                                <p class="classCardStats">+Dex +Wis</p>
+                            </div>
+                            <div class="w-100">
+                                <p>A natural explorer seeking adventures, who on their way found a special hatred
+                                    towards a
+                                    certain
+                                    beast or monster. Able to master any fighting style as long as they don’t involve
+                                    heavy
+                                    weapons
+                                    or
+                                    armor. Spellcasters by default, due to their connection with nature and/or the
+                                    Feywild, they
+                                    are
+                                    excellent scouts and allies to have by your side.</p>
+                                <p>You’ve trained all your life for this moment. Time to hunt the ultimate prey! Get
+                                    your
+                                    weapons
+                                    ready
+                                    and let’s kill legendary monsters. They are masters of the hunt and evasion if their
+                                    prey
+                                    gets
+                                    too
+                                    close. Excellent fighters both to hunt down single enemies, or groups of them.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Ranger</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--rogue class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/rogue-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Rogue Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Rogue</h1>
+                                <h4 class="classCardSubHeader">Thief</h4>
+                                <p class="classCardStats">+Dex</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Let’s get shady, grab a dagger and start stabbing. Rogues excel at sneaking around,
+                                    scouting
+                                    ahead, being dexterous and about everything you would expect a thief to be good at.
+                                    In
+                                    dungeons,
+                                    they
+                                    can help their party by deactivating traps or opening locked doors. Don’t expect
+                                    them to
+                                    wear
+                                    much
+                                    armor, nor be able to carry heavy stuff; but were your task to need some delicacy or
+                                    swashbuckling, you’ve found the right person.</p>
+                                <p>Fascinating during infiltrations, sneaking, or taking someone by surprise, thieves
+                                    excel at
+                                    doing stuff without getting seen. Opening locked doors, chests or mechanisms,
+                                    stealing
+                                    invaluable
+                                    artifacts, and climbing walls to access places you shouldn’t be into are just a few
+                                    things
+                                    they
+                                    are able to do in the blink of an eye.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Rogue</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--sorcerer class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/sorcerer-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="sorcerer Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Sorcerer</h1>
+                                <h4 class="classCardSubHeader">Draconic Bloodline</h4>
+                                <p class="classCardStats">+Cha +Con</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Due to some random or pre-established occurrence, magic runs through you. This means
+                                    you can
+                                    “cheat”
+                                    in a certain way to be able to use magic at will, instead of having to learn how to
+                                    cast it.
+                                    Sorcerers are also equipped with a pool of magic they get their sorcery points from,
+                                    letting
+                                    them
+                                    twist spells to their will in different ways.</p>
+                                <p>Draconic blood runs through your veins. Depending which type of dragon it is you will
+                                    be able
+                                    to
+                                    improve your spells associated with it. Moreover, dragon scales partly cover your
+                                    skin,
+                                    making
+                                    you
+                                    more resistant do damage.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Sorcerer</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--warlock class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/warlock-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="warlock Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Warlock</h1>
+                                <h4 class="classCardSubHeader">The Fiend</h4>
+                                <p class="classCardStats">+Cha +Con</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Warlocks make pacts with extremely powerful beings, who don’t mind lending some power
+                                    as they
+                                    have
+                                    so much they don’t even notice. However, it all comes with a price: There’s a reason
+                                    this
+                                    entity
+                                    decided to accept the pact, and you might need to do some stuff to maintain the
+                                    accord.
+                                    Decide
+                                    whether you want to have a big spellbook full of incantations, a strange summonable
+                                    weapon
+                                    or
+                                    weird
+                                    servants. Will you perish in the way to becoming an eldritch master?</p>
+                                <p>Possibly for some kind of miracle to happen you decided to make a pact with a
+                                    powerful demon
+                                    or
+                                    devil. Fiends don’t really care much about those who make pacts with them. However,
+                                    they
+                                    will
+                                    give
+                                    you their destructive powers in exchange of some things of their like, such as the
+                                    player
+                                    character’s soul.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Warlock</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--wizard class card-->
+                        <div class="d-flex flex-wrap classCard pixel-box col-11 col-sm-5 col-md-5 col-lg-3 lh-1 m-3 justify-content-center">
+                            <div class="w-50 h-auto">
+                                <img src="img/class-icons/wizard-pixel.png" class="card-img-top p-2 pb-2"
+                                     alt="Wizard Icon">
+                            </div>
+                            <div class="classCardHead w-50">
+                                <h1 class="classCardHeader text-decoration-underline">Wizard</h1>
+                                <h4 class="classCardSubHeader">School of Evocation</h4>
+                                <p class="classCardStats">+Int</p>
+                            </div>
+                            <div class="w-100">
+                                <p>Wizards decide to go in adventures to further their knowledge. The great world in
+                                    front of
+                                    them
+                                    has
+                                    thousands of spells for you to learn and master. With a spellbook at hand, they will
+                                    look
+                                    for or
+                                    buy
+                                    them to become a greater spellcaster. Just transcribe them to the book and you’ll
+                                    understand
+                                    why
+                                    wizards are such a versatile class. The amount of spells they can learn greatly
+                                    surpasses
+                                    all
+                                    other
+                                    classes’ lists.</p>
+                                <p> Evocation is the school of magic of destruction and explosions. Thunders, fire, acid
+                                    and
+                                    more
+                                    come
+                                    out from your spells. If you were looking for the all-powerful destructive wizards,
+                                    this is
+                                    your
+                                    best choice! Don’t worry that much about your allies, you can always shape your
+                                    spells a bit
+                                    so
+                                    they
+                                    don’t receive as much damage.</p>
+                            </div>
+                            <div class="align-self-end">
+                                <div class="pixelButtonContainer">
+                                    <div class="pixel"><p>Wizard</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            ...
+        </div>
+        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+            ...
+        </div>
+    </div>
+
+
+</main>
+
+
+<script src="js/play-dnd.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+</html>
