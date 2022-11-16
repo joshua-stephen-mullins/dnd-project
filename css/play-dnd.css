@@ -38,6 +38,10 @@ html, body {
     justify-content: center;
     text-align: center;
 }
+.pixelButtonContainer button {
+    background-color: transparent;
+    border: none;
+}
 .pixel {
     font-size: 25px;
     color: white;
