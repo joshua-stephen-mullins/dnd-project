@@ -50,9 +50,10 @@
 </header>
 <!--    end navbar-->
 <main>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center m-0">
         <h1 class="font-press col-8 text-center mt-4 mb-4">Select a Class</h1>
         <div class="classContainer row col-12 d-flex flex-wrap text-center text-wrap justify-content-evenly m-0 p-0">
+            <!--barbarian class card-->
             <div class="d-flex flex-wrap classCard pixel-box col-10 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
                 <div class="w-50 h-auto">
                     <img src="img/class-icons/barbarian-pixel.png" class="card-img-top p-2 pb-2" alt="Barbarian Icon">
@@ -79,6 +80,8 @@
                     </div>
                 </div>
             </div>
+            <!--bard class card-->
+
             <div class="d-flex flex-wrap classCard pixel-box col-10 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
                 <div class="w-50 h-auto">
                     <img src="img/class-icons/bard-pixel.png" class="card-img-top p-2 pb-2" alt="Bard Icon">
@@ -105,6 +108,7 @@
                     </div>
                 </div>
             </div>
+            <!--cleric class card-->
             <div class="d-flex flex-wrap classCard pixel-box col-10 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
                 <div class="w-50 h-auto">
                     <img src="img/class-icons/cleric-pixel.png" class="card-img-top p-2 pb-2" alt="Cleric Icon">
@@ -134,14 +138,15 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3">
+            <!--druid class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
                 <div class="w-50 h-auto">
                     <img src="img/class-icons/druid-pixel.png" class="card-img-top p-2 pb-2" alt="Druid Icon">
                 </div>
                 <div class="classCardHead w-50">
                     <h1 class="classCardHeader text-decoration-underline">Druid</h1>
                     <h4 class="classCardSubHeader">Circle of the Land</h4>
-                    <p class="classCardStats">+Wis
+                    <p class="classCardStats">+Wis</p>
                 </div>
                 <div class="w-100">
                     <p>Preservers of balance and nature’s warriors, the druids aid their party members by using great
@@ -154,195 +159,242 @@
                         well
                         as benefits associated with the chosen place.</p>
                 </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Druid</p></div>
+                    </div>
+                </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/fighter-pixel.png" class="card-img-top p-2 pb-2 m-3" alt="Fighter Icon">
-                <div class="card-body">
-                    <h1>Fighter</h1>
-                    <h4>Champion</h4>
-                    <p class="card-text">+Str or Dex
-                        +Con
-
-                        What does a fighter do best? Well, fight of course. A really versatile class, as it can work in
+            <!--fighter class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/fighter-pixel.png" class="card-img-top p-2 pb-2" alt="Fighter Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Fighter</h1>
+                    <h4 class="classCardSubHeader">Champion</h4>
+                    <p class="classCardStats">(+Str or +Dex) +Con
+                </div>
+                <div class="w-100">
+                    <p>What does a fighter do best? Well, fight of course. A really versatile class, as it can work in
                         numerous ways. Add the fighting style and you can choose to have a one handed weapon accompanied
                         by
                         a shield, have a two handed weapon, two one handed ones (dual wielding), a ranged weapon and
                         more!
                         Once you’ve got that decided, ready yourself to start demolishing your foes, be it with your
                         mighty
-                        strength or dexterous precision!
-
-                        Champion (PHB)
-                        Fighters from this subclass tend to find their enemies’ weak points and exploit them more often
+                        strength or dexterous precision!</p>
+                    <p>Champion fighters tend to find their enemies’ weak points and exploit them more often
                         than
-                        the rest, allowing them to do double the amount of possible critical attacks. If you are looking
-                        to
-                        play a fighter and the others subclasses overwhelm you with things to learn, this one is your
-                        best
-                        choice.</p>
+                        the rest, allowing them to do double the amount of possible critical attacks.</p>
+                </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Fighter</p></div>
+                    </div>
                 </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/monk-pixel.png" class="card-img-top p-2 pb-2" alt="Monk Icon">
-                <div class="card-body">
-                    <h1>Monk</h1>
-                    <h4>Way of the Open Hand</h4>
-                    <p class="card-text">+Dex
-                        +Wis
-
-                        Martial artists who can channel their Ki to do impressive feats as if they were magic users. No
+            <!--monk class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/monk-pixel.png" class="card-img-top p-2 pb-2" alt="Monk Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Monk</h1>
+                    <h4 class="classCardSubHeader">Way of the Open Hand</h4>
+                    <p class="classCardStats">+Dex +Wis</p>
+                </div>
+                <div class="w-100">
+                    <p>Martial artists who can channel their Ki to do impressive feats as if they were magic users. No
                         armor is necessary, just dexterity and the power of your mind. Deflect missiles thrown at you,
                         changing the target to your enemies, move at the speed of the wind and fill your foes’ faces
-                        with a
-                        flurry blows.
-
-                        Way of the Open Hand (PHB)
-                        The classic martial artist, fist punching, jaw breaking kicker. With their flurry of blows they
-                        can
-                        unstabilize their foes, as well as deal some heavy damage with a succession of hits to their
+                        with a flurry blows.</p>
+                    <p>The classic martial artist, fist punching, jaw breaking kicker. With their flurry of blows they
+                        can unstabilize their foes, as well as deal some heavy damage with a succession of hits to their
                         faces.</p>
                 </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Monk</p></div>
+                    </div>
+                </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/paladin-pixel.png" class="card-img-top p-2 pb-2" alt="Paladin Icon">
-                <div class="card-body">
-                    <h1>Paladin</h1>
-                    <h4>Oath of Devotion</h4>
-                    <p class="card-text">S+Cha
-                        +Str or Dex
-
-                        A paladin is a person guided by an oath, their force of will and devotion so strong they are
+            <!--paladin class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/paladin-pixel.png" class="card-img-top p-2 pb-2" alt="Paladin Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Paladin</h1>
+                    <h4 class="classCardSubHeader">Oath of Devotion</h4>
+                    <p class="classCardStats">+Cha (+Str or +Dex)</p>
+                </div>
+                <div class="w-100">
+                    <p>A paladin is a person guided by an oath, their force of will and devotion so strong they are
                         granted
                         the ability to cast spells to smite their foes. They fight for justice and righteousness, with
                         the
                         idea of following their oath and ideals to the very end. For this, they use heavy armor to be
                         front
-                        liners and protect their allies.
-
-                        Oath of Devotion (PHB)
-                        Their oath makes them trustworthy companions ready to take a bullet for you if needed be. These
+                        liners and protect their allies.</p>
+                    <p>Their oath makes them trustworthy companions ready to take a bullet for you if needed be. These
                         paladins swore to protect the weak, and slay evil, while being compassionate with those that
                         don’t
                         truly deserve death. You are to set an example to others and inspire them to follow your path
                         towards a better world.</p>
                 </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Paladin</p></div>
+                    </div>
+                </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/ranger-pixel.png" class="card-img-top p-2 pb-2" alt="Ranger Icon">
-                <div class="card-body">
-                    <h1>Ranger</h1>
-                    <h4>Hunter</h4>
-                    <p class="card-text">+Dex
-                        +Wis
-
-                        A natural explorer seeking adventures, who on their way found a special hatred towards a certain
+            <!--ranger class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/ranger-pixel.png" class="card-img-top p-2 pb-2" alt="Ranger Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Ranger</h1>
+                    <h4 class="classCardSubHeader">Hunter</h4>
+                    <p class="classCardStats">+Dex +Wis</p>
+                </div>
+                <div class="w-100">
+                    <p>A natural explorer seeking adventures, who on their way found a special hatred towards a certain
                         beast or monster. Able to master any fighting style as long as they don’t involve heavy weapons
                         or
                         armor. Spellcasters by default, due to their connection with nature and/or the Feywild, they are
-                        excellent scouts and allies to have by your side.
-
-                        Hunter (PHB)
-                        You’ve trained all your life for this moment. Time to hunt the ultimate prey! Get your weapons
+                        excellent scouts and allies to have by your side.</p>
+                    <p>You’ve trained all your life for this moment. Time to hunt the ultimate prey! Get your weapons
                         ready
                         and let’s kill legendary monsters. They are masters of the hunt and evasion if their prey gets
                         too
                         close. Excellent fighters both to hunt down single enemies, or groups of them.</p>
                 </div>
-            </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/rogue-pixel.png" class="card-img-top p-2 pb-2" alt="Rogue Icon">
-                <div class="card-body">
-                    <h1>Rogue</h1>
-                    <h4>Thief</h4>
-                    <p class="card-text">+Dex
-
-                        Let’s get shady, grab a dagger and start stabbing. Rogues excel at sneaking around, scouting
-                        ahead,
-                        being dexterous and about everything you would expect a thief to be good at. In dungeons, they
-                        can
-                        help their party by deactivating traps or opening locked doors. Don’t expect them to wear much
-                        armor, nor be able to carry heavy stuff; but were your task to need some delicacy or
-                        swashbuckling,
-                        you’ve found the right person.
-
-                        Thief (PHB)
-                        Fascinating during infiltrations, sneaking, or taking someone by surprise, thieves excel at
-                        doing
-                        stuff without getting seen. Opening locked doors, chests or mechanisms, stealing invaluable
-                        artifacts, and climbing walls to access places you shouldn’t be into are just a few things they
-                        are
-                        able to do in the blink of an eye.</p>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Ranger</p></div>
+                    </div>
                 </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/sorcerer-pixel.png" class="card-img-top p-2 pb-2" alt="Sorcerer Icon">
-                <div class="card-body">
-                    <h1>Sorcerer</h1>
-                    <h4>Draconic Bloodline</h4>
-                    <p class="card-text">+Cha
-                        +Con
-
-                        Due to some random or pre-established occurrence, magic runs through you. This means you can
+            <!--rogue class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/rogue-pixel.png" class="card-img-top p-2 pb-2" alt="Rogue Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Rogue</h1>
+                    <h4 class="classCardSubHeader">Thief</h4>
+                    <p class="classCardStats">+Dex</p>
+                </div>
+                <div class="w-100">
+                    <p>Let’s get shady, grab a dagger and start stabbing. Rogues excel at sneaking around, scouting
+                        ahead, being dexterous and about everything you would expect a thief to be good at. In dungeons,
+                        they
+                        can help their party by deactivating traps or opening locked doors. Don’t expect them to wear
+                        much
+                        armor, nor be able to carry heavy stuff; but were your task to need some delicacy or
+                        swashbuckling, you’ve found the right person.</p>
+                    <p>Fascinating during infiltrations, sneaking, or taking someone by surprise, thieves excel at
+                        doing stuff without getting seen. Opening locked doors, chests or mechanisms, stealing
+                        invaluable
+                        artifacts, and climbing walls to access places you shouldn’t be into are just a few things they
+                        are able to do in the blink of an eye.</p>
+                </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Rogue</p></div>
+                    </div>
+                </div>
+            </div>
+            <!--sorcerer class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/sorcerer-pixel.png" class="card-img-top p-2 pb-2" alt="sorcerer Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Sorcerer</h1>
+                    <h4 class="classCardSubHeader">Draconic Bloodline</h4>
+                    <p class="classCardStats">+Cha +Con</p>
+                </div>
+                <div class="w-100">
+                    <p>Due to some random or pre-established occurrence, magic runs through you. This means you can
                         “cheat”
                         in a certain way to be able to use magic at will, instead of having to learn how to cast it.
                         Sorcerers are also equipped with a pool of magic they get their sorcery points from, letting
                         them
-                        twist spells to their will in different ways.
-
-                        Draconic Bloodline (PHB)
-                        Draconic blood runs through your veins. Depending which type of dragon it is you will be able to
+                        twist spells to their will in different ways.</p>
+                    <p>Draconic blood runs through your veins. Depending which type of dragon it is you will be able to
                         improve your spells associated with it. Moreover, dragon scales partly cover your skin, making
                         you
                         more resistant do damage.</p>
                 </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Sorcerer</p></div>
+                    </div>
+                </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/warlock-pixel.png" class="card-img-top p-2 pb-2" alt="Warlock Icon">
-                <div class="card-body">
-                    <h1>Warlock</h1>
-                    <h4>The Fiend</h4>
-                    <p class="card-text">+Cha
-                        +Con
-
-                        Warlocks make pacts with extremely powerful beings, who don’t mind lending some power as they
+            <!--warlock class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/warlock-pixel.png" class="card-img-top p-2 pb-2" alt="warlock Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Warlock</h1>
+                    <h4 class="classCardSubHeader">The Fiend</h4>
+                    <p class="classCardStats">+Cha +Con</p>
+                </div>
+                <div class="w-100">
+                    <p>Warlocks make pacts with extremely powerful beings, who don’t mind lending some power as they
                         have
                         so much they don’t even notice. However, it all comes with a price: There’s a reason this entity
                         decided to accept the pact, and you might need to do some stuff to maintain the accord. Decide
                         whether you want to have a big spellbook full of incantations, a strange summonable weapon or
                         weird
-                        servants. Will you perish in the way to becoming an eldritch master?
-
-                        The Fiend (PHB)
-                        Possibly for some kind of miracle to happen you decided to make a pact with a powerful demon or
+                        servants. Will you perish in the way to becoming an eldritch master?</p>
+                    <p>Possibly for some kind of miracle to happen you decided to make a pact with a powerful demon or
                         devil. Fiends don’t really care much about those who make pacts with them. However, they will
                         give
                         you their destructive powers in exchange of some things of their like, such as the player
                         character’s soul.</p>
                 </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Warlock</p></div>
+                    </div>
+                </div>
             </div>
-            <div class="classCard pixel-box m-3">
-                <img src="img/class-icons/wizard-pixel.png" class="card-img-top p-2 pb-2" alt="Wizard Icon">
-                <div class="card-body">
-                    <h1>Wizard</h1>
-                    <h4>School of Evocation</h4>
-                    <p class="card-text">+Int
-
-                        Wizards decide to go in adventures to further their knowledge. The great world in front of them
+            <!--wizard class card-->
+            <div class="d-flex flex-wrap classCard pixel-box col-5 col-md-3 col-sm-5 lh-1 m-3 justify-content-center">
+                <div class="w-50 h-auto">
+                    <img src="img/class-icons/wizard-pixel.png" class="card-img-top p-2 pb-2" alt="Wizard Icon">
+                </div>
+                <div class="classCardHead w-50">
+                    <h1 class="classCardHeader text-decoration-underline">Wizard</h1>
+                    <h4 class="classCardSubHeader">School of Evocation</h4>
+                    <p class="classCardStats">+Int</p>
+                </div>
+                <div class="w-100">
+                    <p>Wizards decide to go in adventures to further their knowledge. The great world in front of them
                         has
                         thousands of spells for you to learn and master. With a spellbook at hand, they will look for or
                         buy
                         them to become a greater spellcaster. Just transcribe them to the book and you’ll understand why
                         wizards are such a versatile class. The amount of spells they can learn greatly surpasses all
                         other
-                        classes’ lists.
-
-                        School of Evocation (PHB)
-                        Evocation is the school of magic of destruction and explosions. Thunders, fire, acid and more
+                        classes’ lists.</p>
+                    <p> Evocation is the school of magic of destruction and explosions. Thunders, fire, acid and more
                         come
                         out from your spells. If you were looking for the all-powerful destructive wizards, this is your
                         best choice! Don’t worry that much about your allies, you can always shape your spells a bit so
                         they
                         don’t receive as much damage.</p>
+                </div>
+                <div class="align-self-end">
+                    <div class="pixelButtonContainer">
+                        <div class="pixel"><p>Wizard</p></div>
+                    </div>
                 </div>
             </div>
         </div>
