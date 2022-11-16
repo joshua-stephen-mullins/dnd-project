@@ -51,20 +51,25 @@
 <!--    end navbar-->
 <main>
     <!--    nav tabs-->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs mt-2 justify-content-center fs-3" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race-tab-pane"
                     type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Race
             </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Class
+            <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#class-tab-pane"
+                    type="button" role="tab" aria-controls="class-tab-pane" aria-selected="false">Class
             </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Statistics
+            <button class="nav-link" id="statistics-tab" data-bs-toggle="tab" data-bs-target="#statistics-tab-pane"
+                    type="button" role="tab" aria-controls="statistics-tab-pane" aria-selected="false">Statistics
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="background-tab" data-bs-toggle="tab" data-bs-target="#background-tab-pane"
+                    type="button" role="tab" aria-controls="background-tab-pane" aria-selected="false">Background
             </button>
         </li>
     </ul>
@@ -284,7 +289,8 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+<!--        class navtab-->
+        <div class="tab-pane fade" id="class-tab-pane" role="tabpanel" aria-labelledby="class-tab" tabindex="0">
             <div class="row justify-content-center m-0">
                 <h1 class="font-press col-8 text-center mt-4 mb-4">Select a Class</h1>
                 <form action="">
@@ -321,7 +327,7 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <button type="submit" id="classBarbarian">
+                                    <button id="classBarbarian">
                                         <div class="pixel"><p>Barbarian</p></div>
                                     </button>
                                 </div>
@@ -755,11 +761,13 @@
                 </form>
             </div>
         </div>
-        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-            ...
+<!--        statistics navtab-->
+        <div class="tab-pane fade" id="statistics-tab-pane" role="tabpanel" aria-labelledby="statistic-tab" tabindex="0">
+            Add some ways to get stats...
         </div>
-        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-            ...
+        <!--        background navtab-->
+        <div class="tab-pane fade" id="background-tab-pane" role="tabpanel" aria-labelledby="background-tab" tabindex="0">
+            Acolyte i guess...
         </div>
     </div>
 
