@@ -79,28 +79,32 @@
     <div class="bg-light border-bottom border-3 border-dark">
         <ul class="nav justify-content-center align-items-center fs-3" id="myTab" role="tablist">
             <li class="" role="presentation">
-                <button class="active characterCreationTab" id="race-tab" data-bs-toggle="tab" data-bs-target="#race-tab-pane"
+                <button class="active characterCreationTab" id="race-tab" data-bs-toggle="tab"
+                        data-bs-target="#race-tab-pane"
                         type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Race
                 </button>
             </li>
             <p class="pb-0 mb-0">|</p>
-<!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
+            <!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
             <li class="" role="presentation">
-                <button class="characterCreationTab" id="class-tab" data-bs-toggle="tab" data-bs-target="#class-tab-pane"
+                <button class="characterCreationTab" id="class-tab" data-bs-toggle="tab"
+                        data-bs-target="#class-tab-pane"
                         type="button" role="tab" aria-controls="class-tab-pane" aria-selected="false">Class
                 </button>
             </li>
-<!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
+            <!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
             <p class="pb-0 mb-0">|</p>
             <li class="" role="presentation">
-                <button class="characterCreationTab" id="statistics-tab" data-bs-toggle="tab" data-bs-target="#statistics-tab-pane"
+                <button class="characterCreationTab" id="statistics-tab" data-bs-toggle="tab"
+                        data-bs-target="#statistics-tab-pane"
                         type="button" role="tab" aria-controls="statistics-tab-pane" aria-selected="false">Statistics
                 </button>
             </li>
-<!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
+            <!--            <img class="navTabArrow" src="img/icons/right-arrow-extended-pixel.png" alt="Right Arrow Extended Icon">-->
             <p class="pb-0 mb-0">|</p>
             <li class="" role="presentation">
-                <button class="characterCreationTab" id="background-tab" data-bs-toggle="tab" data-bs-target="#background-tab-pane"
+                <button class="characterCreationTab" id="background-tab" data-bs-toggle="tab"
+                        data-bs-target="#background-tab-pane"
                         type="button" role="tab" aria-controls="background-tab-pane" aria-selected="false">Background
                 </button>
             </li>
@@ -182,7 +186,9 @@
                                                         <!--                                                    </div>-->
 
                                                         <div class="pixelButtonContainer">
-                                                            <div class="pixel align-self-center"><p>Submit</p></div>
+                                                            <button id="raceDwarf">
+                                                                <div class="pixel align-self-center"><p>Dwarf</p></div>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -797,7 +803,50 @@
         <!--        statistics navtab-->
         <div class="tab-pane fade" id="statistics-tab-pane" role="tabpanel" aria-labelledby="statistic-tab"
              tabindex="0">
-            <h1 class="font-press col-8 text-center mt-4 mb-4">Choose Your Statistics</h1>
+            <div class="row justify-content-center m-0">
+                <h1 class="font-press col-8 text-center mt-4 mb-4">Choose Your Statistics</h1>
+            </div>
+            <div class="row p-0 m-0 justify-content-evenly">
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Strength</h3>
+                    <h5>Associated Skills</h5>
+                    <p>Athletics</p>
+                    <p>Strength measures bodily power, athletic training, and the extent to which you can exert raw
+                        physical force.</p>
+                </div>
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Dexterity</h3>
+                    <h5>Associated Skills</h5>
+                    <p>Acrobatics, Sleight of Hand, Stealth</p>
+                    <p>Dexterity measures agility, reflexes, and balance.</p>
+                </div>
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Constitution</h3>
+                    <p>Constitution measures health, stamina, and vital force.</p>
+                </div>
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Intelligence</h3>
+                    <h5>Associated Skills</h5>
+                    <p>Arcana, History, Investigation, Nature, Religion</p>
+                    <p>Intelligence measures mental acuity, accuracy of recall, and the ability to reason.</p>
+                </div>
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Wisdom</h3>
+                    <h5>Associated Skills</h5>
+                    <p>Animal Handling, Insight, Medicine, Perception, Survival</p>
+                    <p>Wisdom reflects how attuned you are to the world around you and represents perceptiveness and
+                        intuition.</p>
+                </div>
+                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                    <h3 class="text-center text-decoration-underline">Charisma</h3>
+                    <h5>Associated Skills</h5>
+                    <p>Deception, Intimidation, Performance, Persuasion</p>
+                    <p>Charisma measures your ability to interact effectively with others. It includes such factors as
+                        confidence and eloquence, and it can represent a charming or commanding personality.</p>
+                </div>
+
+
+            </div>
         </div>
         <!--        background navtab-->
         <div class="tab-pane fade" id="background-tab-pane" role="tabpanel" aria-labelledby="background-tab"
@@ -809,7 +858,8 @@
 
 </main>
 
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

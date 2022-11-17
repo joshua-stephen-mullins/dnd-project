@@ -1,9 +1,25 @@
 "use strict";
 
 
+$(document).ready(function(){
+
+
+
+//    character creation
+let newChar = {};
+    newChar.race = '';
+    newChar.class = '';
+
+$('#raceDwarf').click(function(){
+    $.get('https://www.dnd5eapi.co/api/races/dwarf').done(function(data){
+        newChar.race = data;
+    });
+    console.log(newChar);
+})
+
+
+
 //change style functions
-
-
 //grasslands
 function activateGrasslandsStyle (){
     let bodyElement = document.getElementsByTagName('body')[0];
@@ -52,3 +68,6 @@ grasslandsStyle.addEventListener('click', activateGrasslandsStyleClassPage);
 $.get('https://www.dnd5eapi.co/api/spells/irresistible-dance').done(function(data) {
     console.log(data);
 })
+
+
+});
