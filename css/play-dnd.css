@@ -27,6 +27,16 @@ html, body {
                 0 8px 0 0 black;
 }
 
+.characterCreationTab {
+    border: none;
+    background-color: transparent;
+}
+
+.navTabArrow {
+    width: 2%;
+    height: 2%;
+}
+
 /*carousel arrow on race page*/
 .carouselArrow {
     background: transparent;
