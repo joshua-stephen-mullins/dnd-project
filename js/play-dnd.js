@@ -31,7 +31,6 @@ function activateGrasslandsStyleHomePage (){
 }
 grasslandsStyle.addEventListener('click', activateGrasslandsStyleHomePage);
 
-
 function activateGrasslandsStyleRacePage (){
     let raceCarousel = document.getElementById('raceCarousel');
     raceCarousel.style.backgroundColor = 'rgba(252,252,241,0.7)';
@@ -49,3 +48,7 @@ function activateGrasslandsStyleClassPage (){
     }
 }
 grasslandsStyle.addEventListener('click', activateGrasslandsStyleClassPage);
+
+$.get('https://www.dnd5eapi.co/api/spells/irresistible-dance').done(function(data) {
+    console.log(data);
+})
