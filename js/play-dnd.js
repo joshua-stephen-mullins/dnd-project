@@ -14,14 +14,21 @@ let newChar = {};
 
 $('.raceButton').click(function(){
     $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function(data){
+        $('.racialBonus').each(function(){
+            $('span').html('0');
+        });
         newChar.race = data;
+        $(newChar.race.ability_bonuses).each(function() {
+            console.log(this.ability_score.index);
+            $('#racialBonus_' + this.ability_score.index).html(this.bonus);
+        })
     });
-    $(newChar.race.ability_bonuses).each(function() {
-        console.log(this.ability_score.index);
-        $('#racialBonus_' + this.ability_score.index).html('Racial Bonus: +' + this.bonus);
-    })
 })
 
+//takes you to class tab when you click a race
+    $(".raceButton").click(function() {
+        $('#class-tab').tab('show');
+    })
 
 
 //change style functions
