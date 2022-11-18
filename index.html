@@ -186,7 +186,7 @@
                                                         <!--                                                    </div>-->
 
                                                         <div class="pixelButtonContainer">
-                                                            <button id="raceDwarf">
+                                                            <button class="raceButton" value="dwarf">
                                                                 <div class="pixel align-self-center"><p>Dwarf</p></div>
                                                             </button>
                                                         </div>
@@ -238,7 +238,9 @@
                                                             both longswords and shortswords, as well as shortbows and
                                                             longbows.</p>
                                                         <div class="pixelButtonContainer">
-                                                            <div class="pixel"><p>Submit</p></div>
+                                                            <button class="raceButton" value="elf">
+                                                                <div class="pixel"><p>Elf</p></div>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -280,7 +282,9 @@
                                                             than
                                                             the rest from their race.</p>
                                                         <div class="pixelButtonContainer">
-                                                            <div class="pixel"><p>Submit</p></div>
+                                                            <button class="raceButton" value="halfling">
+                                                                <div class="pixel"><p>Halfling</p></div>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -312,7 +316,9 @@
                                                             due to their short lives (in comparison with the others).
                                                         </p>
                                                         <div class="pixelButtonContainer">
-                                                            <div class="pixel"><p>Submit</p></div>
+                                                            <button class="raceButton" value="human">
+                                                                <div class="pixel"><p>Human</p></div>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -813,18 +819,24 @@
                     <p>Athletics</p>
                     <p>Strength measures bodily power, athletic training, and the extent to which you can exert raw
                         physical force.</p>
+                    <div>
+                        <p id="racialBonus_str"></p>
+                    </div>
                 </div>
                 <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Dexterity</h3>
                     <h5>Associated Skills</h5>
                     <p>Acrobatics, Sleight of Hand, Stealth</p>
                     <p>Dexterity measures agility, reflexes, and balance.</p>
+                    <div>
+                        <p id="racialBonus_dex"></p>
+                    </div>
                 </div>
                 <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Constitution</h3>
                     <p>Constitution measures health, stamina, and vital force.</p>
                     <div>
-                        <p id="racialBonusCon"></p>
+                        <p id="racialBonus_con"></p>
                     </div>
                 </div>
                 <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
@@ -832,6 +844,9 @@
                     <h5>Associated Skills</h5>
                     <p>Arcana, History, Investigation, Nature, Religion</p>
                     <p>Intelligence measures mental acuity, accuracy of recall, and the ability to reason.</p>
+                    <div>
+                        <p id="racialBonus_int"></p>
+                    </div>
                 </div>
                 <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Wisdom</h3>
@@ -839,6 +854,9 @@
                     <p>Animal Handling, Insight, Medicine, Perception, Survival</p>
                     <p>Wisdom reflects how attuned you are to the world around you and represents perceptiveness and
                         intuition.</p>
+                    <div>
+                        <p id="racialBonus_wis"></p>
+                    </div>
                 </div>
                 <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Charisma</h3>
@@ -846,9 +864,10 @@
                     <p>Deception, Intimidation, Performance, Persuasion</p>
                     <p>Charisma measures your ability to interact effectively with others. It includes such factors as
                         confidence and eloquence, and it can represent a charming or commanding personality.</p>
+                    <div>
+                        <p id="racialBonus_cha"></p>
+                    </div>
                 </div>
-
-
             </div>
         </div>
         <!--        background navtab-->

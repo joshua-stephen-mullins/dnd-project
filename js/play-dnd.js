@@ -12,19 +12,15 @@ let newChar = {};
     newChar.background = '';
     newChar.equipment = [];
 
-$('#raceDwarf').click(function(){
-    $.get('https://www.dnd5eapi.co/api/races/dwarf').done(function(data, status, jqXhr){
+$('.raceButton').click(function(){
+    $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function(data){
         newChar.race = data;
-        console.log(("AJAX call completed successfully!"));
-        console.log("Request status: " + status);
-        console.log("Data returned from server:");
-        console.log(data);
     });
-    let dwarfBonus = newChar.race.ability_bonuses[0].bonus;
-    $('#racialBonusCon').html('Racial Bonus : ' + dwarfBonus);
+    $(newChar.race.ability_bonuses).each(function() {
+        console.log(this.ability_score.index);
+        $('#racialBonus_' + this.ability_score.index).html('Racial Bonus: +' + this.bonus);
+    })
 })
-
-
 
 
 
@@ -73,10 +69,5 @@ function activateGrasslandsStyleClassPage (){
     }
 }
 grasslandsStyle.addEventListener('click', activateGrasslandsStyleClassPage);
-
-$.get('https://www.dnd5eapi.co/api/spells/irresistible-dance').done(function(data) {
-    console.log(data);
-})
-
 
 });
