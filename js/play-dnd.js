@@ -9,6 +9,8 @@ $(document).ready(function(){
 let newChar = {};
     newChar.race = '';
     newChar.class = '';
+    newChar.background = '';
+    newChar.equipment = [];
 
 $('#raceDwarf').click(function(){
     $.get('https://www.dnd5eapi.co/api/races/dwarf').done(function(data){
@@ -16,6 +18,8 @@ $('#raceDwarf').click(function(){
     });
     console.log(newChar);
 })
+
+$('#racialBonusCon').html('')
 
 
 
