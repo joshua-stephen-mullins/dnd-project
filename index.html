@@ -352,7 +352,7 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <button id="classBarbarian">
+                                    <button class="classButton" value="barbarian">
                                         <div class="pixel"><p>Barbarian</p></div>
                                     </button>
                                 </div>
@@ -388,7 +388,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Bard</p></div>
+                                    <button class="classButton" value="bard">
+                                        <div class="pixel"><p>Bard</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -427,7 +429,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Cleric</p></div>
+                                    <button class="classButton" value="cleric">
+                                        <div class="pixel"><p>Cleric</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -463,7 +467,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Druid</p></div>
+                                    <button class="classButton" value="druid">
+                                        <div class="pixel"><p>Druid</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -498,7 +504,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Fighter</p></div>
+                                    <button class="classButton" value="fighter">
+                                        <div class="pixel"><p>Fighter</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -532,7 +540,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Monk</p></div>
+                                    <button class="classButton" value="monk">
+                                        <div class="pixel"><p>Monk</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -573,7 +583,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Paladin</p></div>
+                                    <button class="classButton" value="paladin">
+                                        <div class="pixel"><p>Paladin</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -612,7 +624,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Ranger</p></div>
+                                    <button class="classButton" value="ranger">
+                                        <div class="pixel"><p>Ranger</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -652,7 +666,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Rogue</p></div>
+                                    <button class="classButton" value="rogue">
+                                        <div class="pixel"><p>Rogue</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -688,7 +704,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Sorcerer</p></div>
+                                    <button class="classButton" value="sorcerer">
+                                        <div class="pixel"><p>Sorcerer</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -731,7 +749,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Warlock</p></div>
+                                    <button class="classButton" value="warlock">
+                                        <div class="pixel"><p>Warlock</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -778,7 +798,9 @@
                             </div>
                             <div class="align-self-end">
                                 <div class="pixelButtonContainer">
-                                    <div class="pixel"><p>Wizard</p></div>
+                                    <button class="classButton" value="wizard">
+                                        <div class="pixel"><p>Wizard</p></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -793,59 +815,59 @@
                 <h1 class="font-press col-8 text-center mt-4 mb-4">Choose Your Statistics</h1>
             </div>
             <div class="row p-0 m-0 justify-content-evenly">
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Strength</h3>
                     <h5>Associated Skills</h5>
                     <p>Athletics</p>
                     <p>Strength measures bodily power, athletic training, and the extent to which you can exert raw
                         physical force.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_str">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_str">0</span></h4>
                     </div>
                 </div>
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Dexterity</h3>
                     <h5>Associated Skills</h5>
                     <p>Acrobatics, Sleight of Hand, Stealth</p>
                     <p>Dexterity measures agility, reflexes, and balance.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_dex">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_dex">0</span></h4>
                     </div>
                 </div>
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Constitution</h3>
                     <p>Constitution measures health, stamina, and vital force.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_con">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_con">0</span></h4>
                     </div>
                 </div>
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Intelligence</h3>
                     <h5>Associated Skills</h5>
                     <p>Arcana, History, Investigation, Nature, Religion</p>
                     <p>Intelligence measures mental acuity, accuracy of recall, and the ability to reason.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_int">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_int">0</span></h4>
                     </div>
                 </div>
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Wisdom</h3>
                     <h5>Associated Skills</h5>
                     <p>Animal Handling, Insight, Medicine, Perception, Survival</p>
                     <p>Wisdom reflects how attuned you are to the world around you and represents perceptiveness and
                         intuition.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_wis">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_wis">0</span></h4>
                     </div>
                 </div>
-                <div class="pixel-box m-3 col-5 col-md-3 col-lg-3">
+                <div class="pixel-box m-3 col-11 col-sm-5 col-md-3 col-lg-3">
                     <h3 class="text-center text-decoration-underline">Charisma</h3>
                     <h5>Associated Skills</h5>
                     <p>Deception, Intimidation, Performance, Persuasion</p>
                     <p>Charisma measures your ability to interact effectively with others. It includes such factors as
                         confidence and eloquence, and it can represent a charming or commanding personality.</p>
                     <div>
-                        <p class="racialBonus">Racial Bonus: <span id="racialBonus_cha">0</span></p>
+                        <h4 class="racialBonus text-center">Racial Bonus: <span id="racialBonus_cha">0</span></h4>
                     </div>
                 </div>
             </div>
