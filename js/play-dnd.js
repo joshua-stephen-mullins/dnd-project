@@ -41,13 +41,14 @@ $(document).ready(function () {
 
 //function to check statistics dropdowns and disable already chosen options
     $('.abilityScoreSelection').change(function() {
-        $('.abilityScoreSelection option').each(function() {
+        $('.abilityScoreSelection').each(function() {
             // console.log(this.value);
             if (this.value === 'abilityScore-8') {
-                $(this).prop('disabled', true);
+                $('.value-8').prop('disabled', true);
                 console.log('disabled something');
-            } else {
-                $(this).prop('disabled', false);
+            // } else {
+            //     $('.value-8').prop('disabled', false);
+            //     console.log('re-enabled');
             }
         })
         // option.disabled = option.value === 10;
