@@ -41,22 +41,41 @@ $(document).ready(function () {
 
 //function to check statistics dropdowns and disable already chosen options
     $('.abilityScoreSelection').change(function() {
+        let abilityScoreArray = [];
         $('.abilityScoreSelection').each(function() {
-            // console.log(this.value);
-            if (this.value === 'abilityScore-8') {
-                $('.value-8').prop('disabled', true);
-                console.log('disabled something');
-            // } else {
-            //     $('.value-8').prop('disabled', false);
-            //     console.log('re-enabled');
-            }
+            abilityScoreArray.push(this.value)
+            console.log(abilityScoreArray);
         })
-        // option.disabled = option.value === 10;
-        // option.disabled = option.value === 12;
-        // option.disabled = option.value === 13;
-        // option.disabled = option.value === 14;
-        // option.disabled = option.value === 15;
-        // console.log(this);
+        if (abilityScoreArray.indexOf('abilityScore-8') !== -1) {
+            $('.value-8').prop('disabled', true);
+        } else {
+            $('.value-8').prop('disabled', false);
+        }
+        if (abilityScoreArray.indexOf('abilityScore-10') !== -1) {
+            $('.value-10').prop('disabled', true);
+        } else {
+            $('.value-10').prop('disabled', false);
+        }
+        if (abilityScoreArray.indexOf('abilityScore-12') !== -1) {
+            $('.value-12').prop('disabled', true);
+        } else {
+            $('.value-12').prop('disabled', false);
+        }
+        if (abilityScoreArray.indexOf('abilityScore-13') !== -1) {
+            $('.value-13').prop('disabled', true);
+        } else {
+            $('.value-13').prop('disabled', false);
+        }
+        if (abilityScoreArray.indexOf('abilityScore-14') !== -1) {
+            $('.value-14').prop('disabled', true);
+        } else {
+            $('.value-14').prop('disabled', false);
+        }
+        if (abilityScoreArray.indexOf('abilityScore-15') !== -1) {
+            $('.value-15').prop('disabled', true);
+        } else {
+            $('.value-15').prop('disabled', false);
+        }
     })
 
         // let updateAbilityScoreDropdown = $("option[value='8']").attr("disabled", "disabled");
