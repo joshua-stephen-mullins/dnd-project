@@ -11,6 +11,8 @@ $(document).ready(function () {
     newChar.background = '';
     newChar.equipment = [];
 
+
+    // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses
     $('.raceButton').click(function () {
         $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function (data) {
             $('.racialBonus').each(function () {
@@ -23,11 +25,12 @@ $(document).ready(function () {
             })
         });
     })
-//takes you to class tab when you click a race
+    //takes you to class tab when you click a race
     $(".raceButton").click(function () {
         $('#class-tab').tab('show');
     })
 
+    //assigns a class when a class card is clicked
     $('.classButton').click(function () {
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
@@ -35,6 +38,7 @@ $(document).ready(function () {
         })
     })
 
+    //takes you to statistics tab when you click a class
     $(".classButton").click(function () {
         $('#statistics-tab').tab('show');
     })
@@ -44,7 +48,6 @@ $(document).ready(function () {
         let abilityScoreArray = [];
         $('.abilityScoreSelection').each(function() {
             abilityScoreArray.push(this.value)
-            console.log(abilityScoreArray);
         })
         if (abilityScoreArray.indexOf('abilityScore-8') !== -1) {
             $('.value-8').prop('disabled', true);
@@ -76,11 +79,9 @@ $(document).ready(function () {
         } else {
             $('.value-15').prop('disabled', false);
         }
+        $('#baseScore_str').html(abilityScoreArray[0]);
+
     })
-
-        // let updateAbilityScoreDropdown = $("option[value='8']").attr("disabled", "disabled");
-
-        // (updateAbilityScoreDropdown);
 
 
 //change style functions
