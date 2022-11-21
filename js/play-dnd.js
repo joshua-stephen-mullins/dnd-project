@@ -4,14 +4,12 @@
 $(document).ready(function () {
 
 
-//    character creation
+//    new character object
     let newChar = {};
     newChar.race = '';
     newChar.class = '';
     newChar.background = '';
     newChar.equipment = [];
-
-
     // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses
     $('.raceButton').click(function () {
         $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function (data) {
@@ -21,28 +19,33 @@ $(document).ready(function () {
             newChar.race = data;
             $(newChar.race.ability_bonuses).each(function () {
                 $('#racialBonus_' + this.ability_score.index).html(this.bonus);
-                console.log(this.bonus);
             })
         });
     })
+    //populates subclass info when selected
+    $('#subRace_dwarf').change(function(e) {
+        e.preventDefault();
+        if ($(this).val() === 'hillDwarf') {
+            $('#subClassInfo_hillDwarf').html('Wiser than their mountain siblings, Hill Dwarves also tend to be even more sturdy than them, meaning they are able to stand more hits before falling in combat.')
+        }
+    });
+
     //takes you to class tab when you click a race
-    $(".raceButton").click(function () {
+    $(".raceButton").click(function(e) {
+        e.preventDefault();
         $('#class-tab').tab('show');
     })
-
     //assigns a class when a class card is clicked
-    $('.classButton').click(function () {
+    $('.classButton').change(function () {
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
-            console.log(newChar);
         })
     })
-
     //takes you to statistics tab when you click a class
-    $(".classButton").click(function () {
+    $(".classButton").click(function (e) {
+        e.preventDefault();
         $('#statistics-tab').tab('show');
     })
-
 //function to check statistics dropdowns and disable already chosen options
     let abilityScoreCalculate = $('.abilityScoreSelection').change(function() {
         let abilityScoreArray = [];
@@ -79,13 +82,14 @@ $(document).ready(function () {
         } else {
             $('.value-15').prop('disabled', false);
         }
+        //assigns dropdown values into stats card
         $('#baseScore_str').html(parseInt(abilityScoreArray[0].substring(13)));
         $('#baseScore_dex').html(parseInt(abilityScoreArray[1].substring(13)));
         $('#baseScore_con').html(parseInt(abilityScoreArray[2].substring(13)));
         $('#baseScore_int').html(parseInt(abilityScoreArray[3].substring(13)));
         $('#baseScore_wis').html(parseInt(abilityScoreArray[4].substring(13)));
         $('#baseScore_cha').html(parseInt(abilityScoreArray[5].substring(13)));
-
+        //adds chosen numbers from dropdowns with racial modifier and populates total
         $('#abilityScoreTotal_str').html(parseInt($('#baseScore_str')[0].innerText) + parseInt($('#racialBonus_str')[0].innerText))
         $('#abilityScoreTotal_dex').html(parseInt($('#baseScore_dex')[0].innerText) + parseInt($('#racialBonus_dex')[0].innerText))
         $('#abilityScoreTotal_con').html(parseInt($('#baseScore_con')[0].innerText) + parseInt($('#racialBonus_con')[0].innerText))
