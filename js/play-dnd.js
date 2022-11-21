@@ -79,8 +79,12 @@ $(document).ready(function () {
         } else {
             $('.value-15').prop('disabled', false);
         }
-        $('#baseScore_str').html(abilityScoreArray[0]);
-
+        $('#baseScore_str').html(abilityScoreArray[0].substring(13));
+        $('#baseScore_dex').html(abilityScoreArray[1].substring(13));
+        $('#baseScore_con').html(abilityScoreArray[2].substring(13));
+        $('#baseScore_int').html(abilityScoreArray[3].substring(13));
+        $('#baseScore_wis').html(abilityScoreArray[4].substring(13));
+        $('#baseScore_cha').html(abilityScoreArray[5].substring(13));
     })
 
 
