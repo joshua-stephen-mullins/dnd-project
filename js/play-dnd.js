@@ -20,8 +20,8 @@ $(document).ready(function () {
             });
             newChar.race = data;
             $(newChar.race.ability_bonuses).each(function () {
-                console.log(this.ability_score.index);
                 $('#racialBonus_' + this.ability_score.index).html(this.bonus);
+                console.log(this.bonus);
             })
         });
     })
@@ -44,7 +44,7 @@ $(document).ready(function () {
     })
 
 //function to check statistics dropdowns and disable already chosen options
-    $('.abilityScoreSelection').change(function() {
+    let abilityScoreCalculate = $('.abilityScoreSelection').change(function() {
         let abilityScoreArray = [];
         $('.abilityScoreSelection').each(function() {
             abilityScoreArray.push(this.value)
@@ -79,14 +79,20 @@ $(document).ready(function () {
         } else {
             $('.value-15').prop('disabled', false);
         }
-        $('#baseScore_str').html(abilityScoreArray[0].substring(13));
-        $('#baseScore_dex').html(abilityScoreArray[1].substring(13));
-        $('#baseScore_con').html(abilityScoreArray[2].substring(13));
-        $('#baseScore_int').html(abilityScoreArray[3].substring(13));
-        $('#baseScore_wis').html(abilityScoreArray[4].substring(13));
-        $('#baseScore_cha').html(abilityScoreArray[5].substring(13));
-    })
+        $('#baseScore_str').html(parseInt(abilityScoreArray[0].substring(13)));
+        $('#baseScore_dex').html(parseInt(abilityScoreArray[1].substring(13)));
+        $('#baseScore_con').html(parseInt(abilityScoreArray[2].substring(13)));
+        $('#baseScore_int').html(parseInt(abilityScoreArray[3].substring(13)));
+        $('#baseScore_wis').html(parseInt(abilityScoreArray[4].substring(13)));
+        $('#baseScore_cha').html(parseInt(abilityScoreArray[5].substring(13)));
 
+        $('#abilityScoreTotal_str').html(parseInt($('#baseScore_str')[0].innerText) + parseInt($('#racialBonus_str')[0].innerText))
+        $('#abilityScoreTotal_dex').html(parseInt($('#baseScore_dex')[0].innerText) + parseInt($('#racialBonus_dex')[0].innerText))
+        $('#abilityScoreTotal_con').html(parseInt($('#baseScore_con')[0].innerText) + parseInt($('#racialBonus_con')[0].innerText))
+        $('#abilityScoreTotal_int').html(parseInt($('#baseScore_int')[0].innerText) + parseInt($('#racialBonus_int')[0].innerText))
+        $('#abilityScoreTotal_wis').html(parseInt($('#baseScore_wis')[0].innerText) + parseInt($('#racialBonus_wis')[0].innerText))
+        $('#abilityScoreTotal_cha').html(parseInt($('#baseScore_cha')[0].innerText) + parseInt($('#racialBonus_cha')[0].innerText))
+    })
 
 //change style functions
 //grasslands
