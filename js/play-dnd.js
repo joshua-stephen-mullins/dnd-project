@@ -128,7 +128,12 @@ $(document).ready(function () {
             $('#abilityScoreTotal_wis').html(parseInt($('#baseScore_wis')[0].innerText) + parseInt($('#racialBonus_wis')[0].innerText))
             $('#abilityScoreTotal_cha').html(parseInt($('#baseScore_cha')[0].innerText) + parseInt($('#racialBonus_cha')[0].innerText))
         })
+//    backgrounds functions
 
+    $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
+        console.log(data.results);
+        // $('.racialBonus').each(function () {
+    })
 //change style functions
 //grasslands
         function activateGrasslandsStyle() {
