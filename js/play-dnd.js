@@ -28,7 +28,7 @@ $(document).ready(function () {
         console.log(this.value);
         $.get('https://www.dnd5eapi.co/api/subraces/' + $('#subRace_' + this.value).find(':selected').val()).done(function (data) {
             newChar.subRace = data;
-            console.log(newChar.subRace)
+            console.log(newChar)
             $(newChar.subRace.ability_bonuses).each(function () {
                 $('#racialBonus_' + this.ability_score.index).html(this.bonus);
             })
@@ -52,6 +52,12 @@ $(document).ready(function () {
             e.preventDefault();
             if ($(this).val() === 'lightfoot-halfling') {
                 $('#subClassInfo_lightfootHalfling').html('The lightfoot halflings can easily hide behind anything that is higher than themselves and tend to be more charismatic than the rest from their race.')
+            }
+        });
+        $('#subRace_gnome').change(function (e) {
+            e.preventDefault();
+            if ($(this).val() === 'rock-gnome') {
+                $('#subClassInfo_rockGnome').html('Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble.')
             }
         });
 
