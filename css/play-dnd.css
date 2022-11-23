@@ -1,24 +1,16 @@
-:root {
-
-}
-
 body {
     font-family: 'VT323', monospace;
 }
-
 html, body {
     margin: 0;
     padding: 0;
 }
-
 .font-press {
     font-family: 'Press Start 2P', monospace;
 }
-
 .font-VT323 {
     font-family: 'VT323', monospace;
 }
-
 .pixel-box {
     box-shadow:
                 -8px 0 0 0 black,
@@ -26,17 +18,14 @@ html, body {
                 0 -8px 0 0 black,
                 0 8px 0 0 black;
 }
-
-.characterCreationTab, .proficienciesTab{
+.characterCreationTab, .featuresTab{
     border: none;
     background-color: transparent;
 }
-
 .navTabArrow {
     width: 2%;
     height: 2%;
 }
-
 /*carousel arrow on race page*/
 .carouselArrow {
     background: transparent;
@@ -83,7 +72,6 @@ html, body {
     margin: -20px -20px;
     line-height: 20px;
     padding: 10px 20px;
-
     background: #000000;
     background:
             linear-gradient(135deg, transparent 10px, #000000 0) top left,
@@ -98,8 +86,6 @@ html, body {
             radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
             radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
 }
-
-
 /*class container styling*/
 .classContainer img{
     width: 9rem;
@@ -111,9 +97,6 @@ html, body {
 .classCardHeader {
     font-size: 2rem;
 }
-.classCardSubHeader {
-    font-size: 1.5rem;
-}
-.classCardStats {
+.classCardSubHeader, .classCardStats {
     font-size: 1.5rem;
 }

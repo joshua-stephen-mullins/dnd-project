@@ -107,10 +107,10 @@
             </li>
             <p class="pb-0 mb-0">|</p>
             <li class="" role="presentation">
-                <button class="proficienciesTab" id="proficiencies-tab" data-bs-toggle="tab"
-                        data-bs-target="#proficiencies-tab-pane"
-                        type="button" role="tab" aria-controls="proficiencies-tab-pane" aria-selected="false">
-                    Proficiencies
+                <button class="featuresTab" id="features-tab" data-bs-toggle="tab"
+                        data-bs-target="#features-tab-pane"
+                        type="button" role="tab" aria-controls="features-tab-pane" aria-selected="false">
+                    Features
                 </button>
             </li>
         </ul>
@@ -1045,15 +1045,20 @@
                      id="backgroundCards"></div>
             </div>
         </div>
-        <!--        proficiencies navtab-->
-        <div class="tab-pane fade" id="proficiencies-tab-pane" role="tabpanel" aria-labelledby="proficiencies-tab"
+        <!--        features navtab-->
+        <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab"
              tabindex="0">
             <div class="row justify-content-center m-0">
-                <h1 class="font-press col-8 text-center mt-4 mb-4">Select Your Proficiencies</h1>
-                <div class="row col-12 d-flex justify-content-center flex-wrap text-center text-wrap m-0 p-0"
-                     id=" ">
+                <h1 class="font-press col-8 text-center mt-4 mb-4">Additional Choices and Features</h1>
+                <div class="row col-12 d-flex justify-content-center flex-wrap text-center text-wrap m-0 p-0">
                     <div class="pixel-box col-10" id="raceProficiencySelection">
-                        <h1 class="text-decoration-underline">Race Proficiency Selection</h1>
+                        <h1 class="text-decoration-underline">Racial Proficiencies</h1>
+                        <h2 id="raceProficiencyHeader"></h2>
+                        <p>Alignment: <span id="alignment"></span></p>
+                        <p>Age: <span id="age"></span></p>
+                        <p>Size: <span id="size-desc"></span></p>
+                        <p>As a <span id="race-name-lowercase"></span> you have the following proficiencies: <span id="racialProficiencies"></span></p>
+                        <p id="raceProficiencyDescription"></p>
                     </div>
                     <div id="classProficiencySelection"></div>
                     <div id="backgroundProficiencySelection"></div>
