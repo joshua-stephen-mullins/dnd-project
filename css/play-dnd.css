@@ -27,7 +27,7 @@ html, body {
                 0 8px 0 0 black;
 }
 
-.characterCreationTab {
+.characterCreationTab, .proficienciesTab{
     border: none;
     background-color: transparent;
 }
@@ -100,7 +100,7 @@ html, body {
 }
 
 
-/*class container stylings*/
+/*class container styling*/
 .classContainer img{
     width: 9rem;
     height: 9rem;

@@ -11,18 +11,22 @@ $(document).ready(function () {
     newChar.class = '';
     newChar.background = '';
     newChar.equipment = [];
-    // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses
-    $('.raceButton').click(function () {
+    // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses and takes you to class tab when you click a race
+    $('.raceButton').click(function (e) {
+        e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function (data) {
             $('.racialBonus').each(function () {
                 $('span').html('0');
             });
+            // e.preventDefault();
+            $('#class-tab').tab('show');
             newChar.race = data;
             $(newChar.race.ability_bonuses).each(function () {
                 $('#racialBonus_' + this.ability_score.index).html(this.bonus);
             })
         })
     })
+
     //subrace selection
     $('.subRaceButton').click(function () {
         console.log(this.value);
@@ -60,22 +64,13 @@ $(document).ready(function () {
             $('#subClassInfo_rockGnome').html('Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble.')
         }
     });
-
-    //takes you to class tab when you click a race
-    $(".raceButton").click(function (e) {
-        e.preventDefault();
-        $('#class-tab').tab('show');
-    })
-    //assigns a class when a class card is clicked
-    $('.classButton').change(function () {
+    //assigns a class when a class card is clicked and takes you to statistics tab when you click a class
+    $('.classButton').click(function (e) {
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
+            e.preventDefault();
             newChar.class = data;
+            $('#statistics-tab').tab('show');
         })
-    })
-    //takes you to statistics tab when you click a class
-    $(".classButton").click(function (e) {
-        e.preventDefault();
-        $('#statistics-tab').tab('show');
     })
 //function to check statistics dropdowns and disable already chosen options
     let abilityScoreCalculate = $('.abilityScoreSelection').change(function () {
@@ -129,16 +124,13 @@ $(document).ready(function () {
         $('#abilityScoreTotal_cha').html(parseInt($('#baseScore_cha')[0].innerText) + parseInt($('#racialBonus_cha')[0].innerText))
     })
 //    backgrounds functions
-
     $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
         let backgrounds = data.results;
-        console.log(data);
         backgrounds.forEach(function (background) {
             console.log(background);
             $.get('https://www.dnd5eapi.co/api/backgrounds/' + background.index).done(function (data) {
-                console.log(data);
                 let background = data;
-                $('#backgroundCards').html('<div class="pixel-box col-5 ' + background.index + 'Card">' +
+                $('#backgroundCards').html('<div class="pixel-box col-10 col-md-5 col-lg-5 col-xl-5 ' + background.index + 'Card">' +
                     '<h3>' + background.name + '</h3>' +
                     '<p>' + background.feature.name + '</p>' +
                     '<p>' + background.feature.desc + '</p>' +
@@ -148,22 +140,17 @@ $(document).ready(function () {
                     '</button>' +
                     '</div>' +
                     '</div>')
+                //assigns background to newChar object and takes you to proficiencies tab when you click a background
+                $('.backgroundButton').click(function (e) {
+                    newChar.background = data;
+                    e.preventDefault();
+                    $('#proficiencies-tab').tab('show');
+                })
             })
         })
     })
 
-    // function renderCoffee(coffee) {
-    //
-    //     let coffeeCards = '<div class="card coffeeCard" style="width: 18rem;">';
-    //     coffeeCards += '<img src="' + coffee.image +'" className="card-img-top" alt="...">';
-    //     coffeeCards += '<div class="card-body">'
-    //     coffeeCards += '<h5 class="card-title headerFont"> '+ coffee.name +' </h5>'
-    //     coffeeCards += '<p class="card-text">' + coffee.roast + ' roast</p>'
-    //     coffeeCards += '</div>'
-    //     coffeeCards += '</div>'
-    //
-    //     return coffeeCards;
-    // }
+
 //change style functions
 //grasslands
     function activateGrasslandsStyle() {
