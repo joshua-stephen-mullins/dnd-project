@@ -150,6 +150,16 @@ $(document).ready(function () {
         })
     })
 
+//    proficiencies functions
+    //    race choices
+    $('#raceProficiencySelection').html('<div class="pixel-box col-10">' +
+        '<h1 class="text-decoration-underline">Race Proficiency Selection</h1>' +
+        '' +
+        '' +
+        '' +
+        '' +
+        '</div>')
+
 
 //change style functions
 //grasslands
