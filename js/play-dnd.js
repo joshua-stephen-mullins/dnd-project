@@ -34,13 +34,16 @@ $(document).ready(function () {
 
             if (newChar.race.traits.length === 0){
                 $('#traits').addClass('d-none');
+            } else {
+                newChar.race.traits.forEach(function (trait) {
+                    console.log(trait.name)
+                })
             }
-
-            $('#raceProficiencyHeader').html(newChar.race.name);
-            newChar.race.starting_proficiencies.forEach(function (proficiency) {
-                console.log(proficiency.name)
-                $('#racialProficiencies').append(proficiency.name);
-            })
+            // $('#raceProficiencyHeader').html(newChar.race.name);
+            // newChar.race.starting_proficiencies.forEach(function (proficiency) {
+            //     console.log(proficiency.name)
+            //     $('#racialProficiencies').append(proficiency.name);
+            // })
 
         });
     })
