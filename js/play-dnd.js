@@ -37,14 +37,15 @@ $(document).ready(function () {
             } else {
                 newChar.race.traits.forEach(function (trait) {
                     console.log(trait.name)
+                    $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function(data){
+                        let trait = data;
+                        $('#traitCards').append('<div>' +
+                            '<p class="text-decoration-underline">' + trait.name + '</p>' +
+                            '<p>'+ trait.desc + '</p>' +
+                            '</div>' )
+                    })
                 })
             }
-            // $('#raceProficiencyHeader').html(newChar.race.name);
-            // newChar.race.starting_proficiencies.forEach(function (proficiency) {
-            //     console.log(proficiency.name)
-            //     $('#racialProficiencies').append(proficiency.name);
-            // })
-
         });
     })
 
