@@ -169,7 +169,7 @@ $(document).ready(function () {
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
-                    $('#proficiencies-tab').tab('show');
+                    $('#features-tab').tab('show');
                 })
             })
         })
