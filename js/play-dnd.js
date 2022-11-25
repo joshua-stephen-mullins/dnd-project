@@ -27,10 +27,10 @@ $(document).ready(function () {
 
 
             //populating proficiencies tab
-            $('#alignment').html(newChar.race.alignment);
-            $('#age').html(newChar.race.age);
-            $('#size-desc').html(newChar.race.size_description);
-            $('#languages').html(newChar.race.language_desc);
+            $('#alignment').html('<span class="fw-bold">Alignment: ' + newChar.race.alignment);
+            $('#age').html('<span className="fw-bold">Age: </span>' + newChar.race.age);
+            $('#size-desc').html('<span className="fw-bold">Size: </span>' + newChar.race.size_description);
+            $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc);
 
             if (newChar.race.traits.length === 0){
                 $('#traits').addClass('d-none');
