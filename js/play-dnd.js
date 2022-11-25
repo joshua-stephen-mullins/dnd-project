@@ -35,8 +35,9 @@ $(document).ready(function () {
             if (newChar.race.traits.length === 0){
                 $('#traits').addClass('d-none');
             } else {
+                $('#traitCards').html('');
+                $('#traitsHeader').html('<h3>Traits</h3>');
                 newChar.race.traits.forEach(function (trait) {
-                    console.log(trait.name)
                     $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function(data){
                         let trait = data;
                         $('#traitCards').append('<div>' +
