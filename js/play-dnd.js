@@ -25,7 +25,7 @@ $(document).ready(function () {
             $('#race-name-lowercase').html(newChar.race.name.toLowerCase());
             $('#race-name-uppercase').html(newChar.race.name.toLowerCase());
             //populating proficiencies tab
-            $('#alignment').html('<span class="fw-bold">Alignment: ' + newChar.race.alignment);
+            $('#alignment').html('<span class="fw-bold">Alignment: </span>' + newChar.race.alignment);
             $('#age').html('<span className="fw-bold">Age: </span>' + newChar.race.age);
             $('#size-desc').html('<span className="fw-bold">Size: </span>' + newChar.race.size_description);
             $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc);
