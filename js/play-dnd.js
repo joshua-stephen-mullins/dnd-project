@@ -38,6 +38,10 @@ $(document).ready(function () {
                 newChar.race.traits.forEach(function (trait) {
                     $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function (data) {
                         let trait = data;
+                        $('#traitCards').append('<div id="' + trait.index + '">' +
+                            '<p class="text-decoration-underline">' + trait.name + '</p>' +
+                            '<p>' + trait.desc + '</p>' +
+                            '</div>');
                         if (trait.hasOwnProperty('proficiency_choices')) {
                             $('#traitSelection').html('<select id="' + trait.index + '"></select>');
                             trait.proficiency_choices.from.options.forEach((function(choice){
@@ -45,8 +49,9 @@ $(document).ready(function () {
                                     choice.item.name +
                                 '</option>')
                             }))
-                        } else if (trait.index === 'draconic-ancestry') {
-                            $('#traitSelection').html('<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
+                        }
+                        if (trait.index === 'draconic-ancestry') {
+                            $('#draconic-ancestry').append('<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
                                 '<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
                                 '<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
                                 '<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
@@ -57,12 +62,16 @@ $(document).ready(function () {
                                 '<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>' +
                                 '<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
                                 '<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
-                                '</table>')
+                                '</table>' +
+                                '<select id="draconic-ancestry-selection"' +
+                                '</select>')
+                            // console.log(trait.trait_specific.subtrait_options.from.options)
+                            trait.trait_specific.subtrait_options.from.options.forEach((function(choice){
+                                $('#draconic-ancestry-selection').append('<option value="' + choice.item.index + '">' +
+                                    choice.item.name +
+                                    '</option>')
+                            }))
                         }
-                        $('#traitCards').append('<div>' +
-                            '<p class="text-decoration-underline">' + trait.name + '</p>' +
-                            '<p>' + trait.desc + '</p>' +
-                            '</div>')
                     })
                 })
             }
