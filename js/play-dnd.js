@@ -26,8 +26,8 @@ $(document).ready(function () {
             $('#race-name-uppercase').html(newChar.race.name.toLowerCase());
             //populating proficiencies tab
             $('#alignment').html('<span class="fw-bold">Alignment: </span>' + newChar.race.alignment);
-            $('#age').html('<span className="fw-bold">Age: </span>' + newChar.race.age);
-            $('#size-desc').html('<span className="fw-bold">Size: </span>' + newChar.race.size_description);
+            $('#age').html('<span class="fw-bold">Age: </span>' + newChar.race.age);
+            $('#size-desc').html('<span class="fw-bold">Size: </span>' + newChar.race.size_description);
             $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc);
 
             if (newChar.race.traits.length === 0) {
@@ -45,6 +45,19 @@ $(document).ready(function () {
                                     choice.item.name +
                                 '</option>')
                             }))
+                        } else if (trait.index === 'draconic-ancestry') {
+                            $('#traitSelection').html('<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
+                                '<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+                                '<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+                                '<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+                                '<tr><td>Bronze</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+                                '<tr><td>Copper</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+                                '<tr><td>Gold</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>' +
+                                '<tr><td>Green</td><td>Poison</td><td>15 ft. cone (Con. save)</td></tr>' +
+                                '<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>' +
+                                '<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
+                                '<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
+                                '</table>')
                         }
                         $('#traitCards').append('<div>' +
                             '<p class="text-decoration-underline">' + trait.name + '</p>' +
@@ -55,6 +68,20 @@ $(document).ready(function () {
             }
         })
     })
+
+    let draconicAncestryTable = '<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
+        '<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+        '<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+        '<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+        '<tr><td>Bronze</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+        '<tr><td>Copper</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
+        '<tr><td>Gold</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>' +
+        '<tr><td>Green</td><td>Poison</td><td>15 ft. cone (Con. save)</td></tr>' +
+        '<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>' +
+        '<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
+        '<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>' +
+        '</table>'
+
 //subrace selection
     $('.subRaceButton').click(function () {
         $.get('https://www.dnd5eapi.co/api/subraces/' + $('#subRace_' + this.value).find(':selected').val()).done(function (data) {
