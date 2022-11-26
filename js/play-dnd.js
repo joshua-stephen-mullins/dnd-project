@@ -28,7 +28,20 @@ $(document).ready(function () {
             $('#alignment').html('<span class="fw-bold">Alignment: </span>' + newChar.race.alignment);
             $('#age').html('<span class="fw-bold">Age: </span>' + newChar.race.age);
             $('#size-desc').html('<span class="fw-bold">Size: </span>' + newChar.race.size_description);
-            $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc);
+            function languageFeaturesPopulation(e){
+                if (newChar.race.hasOwnProperty('language_options')){
+                    console.log('has lang thing')
+                    $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc + '<br><select id="language_selection"></select>');
+                    newChar.race.language_options.from.options.forEach(function(option){
+                        $('#language_selection').append('<option value="'+ option.item.index + '">' + option.item.name + '</option>')
+                    })
+                } else {
+                    console.log('no lang thing')
+                    $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc)
+                }
+            }
+            languageFeaturesPopulation();
+
 
             if (newChar.race.traits.length === 0) {
                 $('#traits').addClass('d-none');
