@@ -10,24 +10,25 @@ $(document).ready(function () {
     // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses and takes you to class tab when you click a race
     $('.raceButton').click(function (e) {
         e.preventDefault();
+        //retrieves race info based on race button clicked
         $.get('https://www.dnd5eapi.co/api/races/' + this.value).done(function (data) {
+            //resets racial bonuses to 0 on statistics page - basically just here in case you go back and click a different race
             $('.racialBonus').each(function () {
                 $('span').html('0');
             });
             //takes page to next tab
             $('#class-tab').tab('show');
+            //assigns api data to newChar object
             newChar.race = data;
             //populates statistics page with racial bonuses
             $(newChar.race.ability_bonuses).each(function () {
                 $('#racialBonus_' + this.ability_score.index).html(this.bonus);
             })
-            //race identifiers for text fields
-            $('#race-name-lowercase').html(newChar.race.name.toLowerCase());
-            $('#race-name-uppercase').html(newChar.race.name.toLowerCase());
-            //populating proficiencies tab
+            //populating various fields on the features tab with race info from api
             $('#alignment').html('<span class="fw-bold">Alignment: </span>' + newChar.race.alignment);
             $('#age').html('<span class="fw-bold">Age: </span>' + newChar.race.age);
             $('#size-desc').html('<span class="fw-bold">Size: </span>' + newChar.race.size_description);
+            //function to provide dropdown if race has additional language choice options
             function languageFeaturesPopulation(e){
                 if (newChar.race.hasOwnProperty('language_options')){
                     console.log('has lang thing')
@@ -42,7 +43,7 @@ $(document).ready(function () {
             }
             languageFeaturesPopulation();
 
-
+            //populates traits section of racial features
             if (newChar.race.traits.length === 0) {
                 $('#traits').addClass('d-none');
             } else {
@@ -55,6 +56,7 @@ $(document).ready(function () {
                             '<p class="text-decoration-underline">' + trait.name + '</p>' +
                             '<p>' + trait.desc + '</p>' +
                             '</div>');
+                        //conditional to create select option for traits that has a choice
                         if (trait.hasOwnProperty('proficiency_choices')) {
                             $('#' + trait.index).append('<select id="' + trait.index + '_selection"></select>');
                             trait.proficiency_choices.from.options.forEach((function (choice) {
@@ -63,6 +65,7 @@ $(document).ready(function () {
                                     '</option>')
                             }))
                         }
+                        //conditional to populate table for dragonborn choices
                         if (trait.index === 'draconic-ancestry') {
                             $('#draconic-ancestry').append('<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
                                 '<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>' +
@@ -78,7 +81,6 @@ $(document).ready(function () {
                                 '</table>' +
                                 '<select id="draconic-ancestry-selection"' +
                                 '</select>')
-                            // console.log(trait.trait_specific.subtrait_options.from.options)
                             trait.trait_specific.subtrait_options.from.options.forEach((function (choice) {
                                 $('#draconic-ancestry-selection').append('<option value="' + choice.item.index + '">' +
                                     choice.item.name +
@@ -91,13 +93,16 @@ $(document).ready(function () {
         })
     })
 
-//subrace selection
+        //subrace selection
         $('.subRaceButton').click(function () {
+            //pulls subrace data from api using selection value from dropdown
             $.get('https://www.dnd5eapi.co/api/subraces/' + $('#subRace_' + this.value).find(':selected').val()).done(function (data) {
                 newChar.subRace = data;
+                //added additonal statistical bonuses from subclass to statistics tab
                 $(newChar.subRace.ability_bonuses).each(function () {
                     $('#racialBonus_' + this.ability_score.index).html(this.bonus);
                 })
+                //populates racial traits from subrace to racial features section on features tab
                 newChar.subRace.racial_traits.forEach(function (trait) {
                     $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function (data) {
                         let trait = data;
@@ -109,7 +114,7 @@ $(document).ready(function () {
                 })
             });
         });
-//populates subclass info when selected
+        //populates subclass info when selected
         $('#subRace_dwarf').change(function (e) {
             e.preventDefault();
             if ($(this).val() === 'hill-dwarf') {
@@ -134,7 +139,7 @@ $(document).ready(function () {
                 $('#subClassInfo_rockGnome').html('Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble.')
             }
         });
-//assigns a class when a class card is clicked and takes you to statistics tab when you click a class
+        //assigns a class when a class card is clicked and takes you to statistics tab when you click a class
         $('.classButton').click(function (e) {
             $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
                 e.preventDefault();
@@ -142,7 +147,7 @@ $(document).ready(function () {
                 $('#statistics-tab').tab('show');
             })
         })
-//function to check statistics dropdowns and disable already chosen options
+        //function to check statistics dropdowns and disable already chosen options
         let abilityScoreCalculate = $('.abilityScoreSelection').change(function () {
             let abilityScoreArray = [];
             $('.abilityScoreSelection').each(function () {
@@ -193,7 +198,7 @@ $(document).ready(function () {
             $('#abilityScoreTotal_wis').html(parseInt($('#baseScore_wis')[0].innerText) + parseInt($('#racialBonus_wis')[0].innerText))
             $('#abilityScoreTotal_cha').html(parseInt($('#baseScore_cha')[0].innerText) + parseInt($('#racialBonus_cha')[0].innerText))
         })
-//    backgrounds functions
+        //backgrounds tab functions
         $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
             let backgrounds = data.results;
             backgrounds.forEach(function (background) {
@@ -219,10 +224,6 @@ $(document).ready(function () {
                 })
             })
         })
-
-//    proficiencies functions
-//    race choices
-
 
 //change style functions
 //grasslands
