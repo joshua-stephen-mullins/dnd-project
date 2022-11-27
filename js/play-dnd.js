@@ -7,6 +7,7 @@ $(document).ready(function () {
     newChar.class = '';
     newChar.background = '';
     newChar.equipment = [];
+    newChar.proficiencies = [];
     // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses and takes you to class tab when you click a race
     $('.raceButton').click(function (e) {
         e.preventDefault();
@@ -65,6 +66,12 @@ $(document).ready(function () {
                                     '</option>')
                             }))}
                         }
+                        if (trait.hasOwnProperty('proficiencies')) {
+                            trait.proficiencies.forEach(function(proficiency){
+                                newChar.proficiencies.push(proficiency);
+                                console.log(newChar);
+                            })
+                        }
                         //conditional to populate table for dragonborn choices
                         if (trait.index === 'draconic-ancestry') {
                             $('#draconic-ancestry').append('<table class="table"><tr><th class="m-1">Dragon</th><th class="m-1">Damage Type</th><th class="m-1">Breath Weapon</th></tr>' +
@@ -113,6 +120,12 @@ $(document).ready(function () {
                         $('#' + trait.index).append('<select id="' + trait.index + '_selection"></select>');
                         trait.language_options.from.options.forEach(function (option) {
                             $('#' + trait.index + '_selection').append('<option value="' + option.item.index + '">' + option.item.name + '</option>')
+                        })
+                    }
+                    if (trait.hasOwnProperty('proficiencies')) {
+                        trait.proficiencies.forEach(function(proficiency){
+                            newChar.proficiencies.push(proficiency);
+                            console.log(newChar);
                         })
                     }
                 })
