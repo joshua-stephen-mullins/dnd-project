@@ -33,7 +33,7 @@ $(document).ready(function () {
             function languageFeaturesPopulation(e) {
                 if (newChar.race.hasOwnProperty('language_options')) {
                     console.log('has lang thing')
-                    $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc + '<br><select id="language_selection"></select>');
+                    $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc + '<br><select class="text-center" id="language_selection"></select>');
                     newChar.race.language_options.from.options.forEach(function (option) {
                         $('#language_selection').append('<option value="' + option.item.index + '">' + option.item.name + '</option>')
                     })
@@ -54,14 +54,14 @@ $(document).ready(function () {
                 newChar.race.traits.forEach(function (trait) {
                     $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function (data) {
                         let trait = data;
-                        $('#traitCards').append('<div id="' + trait.index + '">' +
-                            '<p class="text-decoration-underline">' + trait.name + '</p>' +
+                        $('#traitCards').append('<div class="p-0"id="' + trait.index + '">' +
+                            '<p class="text-decoration-underline mb-0 text-start">' + trait.name + '</p>' +
                             '<p>' + trait.desc + '</p>' +
                             '</div>');
                         //conditional to create select option for traits that has a choice
                         if (trait.hasOwnProperty('proficiency_choices')) {
                             for (let i = 1; i <= trait.proficiency_choices.choose; i++){
-                            $('#' + trait.index).append('<select id="' + trait.index + '_selection' + i + '"></select>');
+                            $('#' + trait.index).append('<select class="text-center" id="' + trait.index + '_selection' + i + '"></select>');
                             trait.proficiency_choices.from.options.forEach((function (choice) {
                                 $('#' + trait.index + '_selection' + i).append('<option value="' + choice.item.index + '">' +
                                     choice.item.name +
