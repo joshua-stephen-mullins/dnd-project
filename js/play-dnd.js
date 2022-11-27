@@ -28,7 +28,6 @@ $(document).ready(function () {
             $('#alignment').html('<span class="fw-bold">Alignment: </span>' + newChar.race.alignment);
             $('#age').html('<span class="fw-bold">Age: </span>' + newChar.race.age);
             $('#size-desc').html('<span class="fw-bold">Size: </span>' + newChar.race.size_description);
-
             //function to provide dropdown if race has additional language choice options
             function languageFeaturesPopulation(e) {
                 if (newChar.race.hasOwnProperty('language_options')) {
@@ -42,9 +41,7 @@ $(document).ready(function () {
                     $('#languages').html('<span class="fw-bold">Languages: </span>' + newChar.race.language_desc)
                 }
             }
-
             languageFeaturesPopulation();
-
             //populates traits section of racial features
             if (newChar.race.traits.length === 0) {
                 $('#traits').addClass('d-none');
@@ -54,7 +51,7 @@ $(document).ready(function () {
                 newChar.race.traits.forEach(function (trait) {
                     $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function (data) {
                         let trait = data;
-                        $('#traitCards').append('<div class="p-0"id="' + trait.index + '">' +
+                        $('#traitCards').append('<div class="p-0" id="' + trait.index + '">' +
                             '<p class="text-decoration-underline mb-0 text-start">' + trait.name + '</p>' +
                             '<p>' + trait.desc + '</p>' +
                             '</div>');
@@ -95,7 +92,6 @@ $(document).ready(function () {
             }
         })
     })
-
     //subrace selection
     $('.subRaceButton').click(function () {
         //pulls subrace data from api using selection value from dropdown
@@ -109,8 +105,8 @@ $(document).ready(function () {
             newChar.subRace.racial_traits.forEach(function (trait) {
                 $.get('https://www.dnd5eapi.co/api/traits/' + trait.index).done(function (data) {
                     let trait = data;
-                    $('#traitCards').append('<div id="' + trait.index + '">' +
-                        '<p class="text-decoration-underline">' + trait.name + '</p>' +
+                    $('#traitCards').append('<div class="p-0" id="' + trait.index + '">' +
+                        '<p class="text-decoration-underline m-0">' + trait.name + '</p>' +
                         '<p>' + trait.desc + '</p>' +
                         '</div>');
                     if (trait.hasOwnProperty('language_options')) {
