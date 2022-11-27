@@ -60,12 +60,13 @@ $(document).ready(function () {
                             '</div>');
                         //conditional to create select option for traits that has a choice
                         if (trait.hasOwnProperty('proficiency_choices')) {
-                            $('#' + trait.index).append('<select id="' + trait.index + '_selection"></select>');
+                            for (let i = 1; i <= trait.proficiency_choices.choose; i++){
+                            $('#' + trait.index).append('<select id="' + trait.index + '_selection' + i + '"></select>');
                             trait.proficiency_choices.from.options.forEach((function (choice) {
-                                $('#' + trait.index + '_selection').append('<option value="' + choice.item.index + '">' +
+                                $('#' + trait.index + '_selection' + i).append('<option value="' + choice.item.index + '">' +
                                     choice.item.name +
                                     '</option>')
-                            }))
+                            }))}
                         }
                         //conditional to populate table for dragonborn choices
                         if (trait.index === 'draconic-ancestry') {
