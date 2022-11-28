@@ -241,9 +241,15 @@ $(document).ready(function () {
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
-                    console.log(newChar.proficiencies)
-                    if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
-                        console.log('has warhammers');
+                    // console.log(newChar)
+                    // if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
+                    //     console.log('has warhammers');
+                    // }
+                    if (background.hasOwnProperty('starting_proficiencies')) {
+                        background.starting_proficiencies.forEach(function(proficiency){
+                            newChar.proficiencies.background.push(proficiency);
+                            console.log(newChar);
+                        })
                     }
                     $('#features-tab').tab('show');
                 })
