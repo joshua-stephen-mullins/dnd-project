@@ -241,6 +241,10 @@ $(document).ready(function () {
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
+                    console.log(newChar.proficiencies)
+                    if (newChar.proficiencies.indexOf('warhammers') > -1){
+                        console.log('has warhammers');
+                    }
                     $('#features-tab').tab('show');
                 })
             })
