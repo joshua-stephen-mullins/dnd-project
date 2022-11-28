@@ -7,7 +7,11 @@ $(document).ready(function () {
     newChar.class = '';
     newChar.background = '';
     newChar.equipment = [];
-    newChar.proficiencies = [];
+    newChar.proficiencies = {
+        background: [],
+        race: [],
+        class: [],
+    };
     // assigns a race when the race card button is clicked and then populated statistics page with racial bonuses and takes you to class tab when you click a race
     $('.raceButton').click(function (e) {
         e.preventDefault();
@@ -68,7 +72,7 @@ $(document).ready(function () {
                         }
                         if (trait.hasOwnProperty('proficiencies')) {
                             trait.proficiencies.forEach(function(proficiency){
-                                newChar.proficiencies.push(proficiency);
+                                newChar.proficiencies.race.push(proficiency);
                                 console.log(newChar);
                             })
                         }
@@ -124,7 +128,7 @@ $(document).ready(function () {
                     }
                     if (trait.hasOwnProperty('proficiencies')) {
                         trait.proficiencies.forEach(function(proficiency){
-                            newChar.proficiencies.push(proficiency);
+                            newChar.proficiencies.race.push(proficiency);
                             console.log(newChar);
                         })
                     }
