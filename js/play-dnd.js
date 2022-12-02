@@ -127,27 +127,15 @@ $(document).ready(function () {
         });
     });
     //populates subclass info when selected
-    $('#subRace_dwarf').change(function (e) {
+    $('.subRaceSelection').change(function (e) {
         e.preventDefault();
         if ($(this).val() === 'hill-dwarf') {
             $('#subClassInfo_hillDwarf').html('Wiser than their mountain siblings, Hill Dwarves also tend to be even more sturdy than them, meaning they are able to stand more hits before falling in combat.')
-        }
-    });
-    $('#subRace_elf').change(function (e) {
-        e.preventDefault();
-        if ($(this).val() === 'high-elf') {
+        } else if ($(this).val() === 'high-elf') {
             $('#subClassInfo_highElf').html('High elves are more studious and value art in a greater way than their other elven cousins. In addition, they master both longswords and shortswords, as well as shortbows and longbows.')
-        }
-    });
-    $('#subRace_halfling').change(function (e) {
-        e.preventDefault();
-        if ($(this).val() === 'lightfoot-halfling') {
+        } else if ($(this).val() === 'lightfoot-halfling') {
             $('#subClassInfo_lightfootHalfling').html('The lightfoot halflings can easily hide behind anything that is higher than themselves and tend to be more charismatic than the rest from their race.')
-        }
-    });
-    $('#subRace_gnome').change(function (e) {
-        e.preventDefault();
-        if ($(this).val() === 'rock-gnome') {
+        } else if ($(this).val() === 'rock-gnome') {
             $('#subClassInfo_rockGnome').html('Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble.')
         }
     });
@@ -166,6 +154,7 @@ $(document).ready(function () {
             abilityScoreArray.push(this.value)
         })
         for (let i = 8; i <= 15; i++) {
+            console.log(abilityScoreArray);
             if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
                 $('.value-' + i).prop('disabled', true);
             } else {
@@ -191,19 +180,19 @@ $(document).ready(function () {
     $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
         let backgrounds = data.results;
         backgrounds.forEach(function (background) {
-            $.get('https://www.dnd5eapi.co/api/backgrounds/' + background.index).done(function (data) {
+            $.get(`https://www.dnd5eapi.co/api/backgrounds/${background.index}`).done(function (data) {
                 let background = data;
                 //creates card for backgrounds
-                $('#backgroundCards').html('<div class="pixel-box col-10 col-md-5 col-lg-5 col-xl-5 ' + background.index + 'Card">' +
-                    '<h3>' + background.name + '</h3>' +
-                    '<p>' + background.feature.name + '</p>' +
-                    '<p>' + background.feature.desc + '</p>' +
-                    '<div class="pixelButtonContainer">' +
-                    '<button class="backgroundButton" value="' + background.index + '">' +
-                    '<div class="pixel"><p>' + background.name + '</p></div>' +
-                    '</button>' +
-                    '</div>' +
-                    '</div>')
+                $('#backgroundCards').html(`<div class="pixel-box col-10 col-md-5 col-lg-5 col-xl-5 ${background.index}Card">` +
+                    `<h3>${background.name}</h3>` +
+                    `<p>${background.feature.name}</p>` +
+                    `<p>${background.feature.desc}</p>` +
+                    `<div class="pixelButtonContainer">` +
+                    `<button class="backgroundButton" value="${background.index}">` +
+                    `<div class="pixel"><p>${background.name}</p></div>` +
+                    `</button>` +
+                    `</div>` +
+                    `</div>`)
                 //assigns background to newChar object and takes you to proficiencies tab when you click a background
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
