@@ -25,6 +25,7 @@ $(document).ready(function () {
             $('#class-tab').tab('show');
             //assigns api data to newChar object
             newChar.race = data;
+            console.log(newChar)
             //populates statistics page with racial bonuses
             $(newChar.race.ability_bonuses).each(function () {
                 $(`#racialBonus_${this.ability_score.index}`).html(this.bonus);
@@ -101,6 +102,7 @@ $(document).ready(function () {
         //pulls subrace data from api using selection value from dropdown
         $.get('https://www.dnd5eapi.co/api/subraces/' + $(`#subRace_${this.value}`).find(':selected').val()).done(function (data) {
             newChar.subRace = data;
+            console.log(newChar)
             //added additional statistical bonuses from subclass to statistics tab
             $(newChar.subRace.ability_bonuses).each(function () {
                 $(`#racialBonus_${this.ability_score.index}`).html(this.bonus);
@@ -119,7 +121,6 @@ $(document).ready(function () {
                     if (trait.hasOwnProperty('proficiencies')) {
                         trait.proficiencies.forEach(function (proficiency) {
                             newChar.proficiencies.race.push(proficiency);
-                            console.log(newChar);
                         })
                     }
                 })
@@ -144,17 +145,21 @@ $(document).ready(function () {
         e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
+            console.log(newChar);
             $('#statistics-tab').tab('show');
         })
     })
     //function to check statistics dropdowns and disable already chosen options
-    $('.abilityScoreSelection').change(function () {
+    $('.abilityScoreSelectionDropdown').change(function(){
+        reloadStatisticsTab();
+    })
+
+    function reloadStatisticsTab() {
         let abilityScoreArray = [];
         $('.abilityScoreSelection').each(function () {
             abilityScoreArray.push(this.value)
         })
         for (let i = 8; i <= 15; i++) {
-            console.log(abilityScoreArray);
             if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
                 $('.value-' + i).prop('disabled', true);
             } else {
@@ -175,7 +180,8 @@ $(document).ready(function () {
             $('#abilityScoreTotal_wis').html(parseInt($('#baseScore_wis')[0].innerText) + parseInt($('#racialBonus_wis')[0].innerText))
             $('#abilityScoreTotal_cha').html(parseInt($('#baseScore_cha')[0].innerText) + parseInt($('#racialBonus_cha')[0].innerText))
         }
-    })
+    }
+
     //backgrounds tab functions
     $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
         let backgrounds = data.results;
