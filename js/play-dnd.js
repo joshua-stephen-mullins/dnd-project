@@ -18,9 +18,7 @@ $(document).ready(function () {
         //retrieves race info based on race button clicked
         $.get(`https://www.dnd5eapi.co/api/races/${this.value}`).done(function (data) {
             //resets racial bonuses to 0 on statistics page - basically just here in case you go back and click a different race
-            $('.racialBonus').each(function () {
-                $('span').html('0');
-            });
+            $('.racialBonus').each(() => $('span').html('0'));
             //takes page to next tab
             $('#class-tab').tab('show');
             //assigns api data to newChar object
@@ -68,9 +66,7 @@ $(document).ready(function () {
                             }
                         }
                         if (trait.hasOwnProperty('proficiencies')) {
-                            trait.proficiencies.forEach(function (proficiency) {
-                                newChar.proficiencies.race.push(proficiency);
-                            })
+                            trait.proficiencies.forEach((proficiency) => newChar.proficiencies.race.push(proficiency))
                         }
                         //conditional to populate table for dragonborn choices
                         if (trait.index === 'draconic-ancestry') {
@@ -88,9 +84,7 @@ $(document).ready(function () {
                                 '</table>' +
                                 '<select id="draconic-ancestry-selection"' +
                                 '</select>')
-                            trait.trait_specific.subtrait_options.from.options.forEach((function (choice) {
-                                $('#draconic-ancestry-selection').append(`<option value="${choice.item.index}">${choice.item.name}</option>`)
-                            }))
+                            trait.trait_specific.subtrait_options.from.options.forEach(((choice) => $('#draconic-ancestry-selection').append(`<option value="${choice.item.index}">${choice.item.name}</option>`)));
                         }
                     })
                 })
@@ -119,9 +113,7 @@ $(document).ready(function () {
                         })
                     }
                     if (trait.hasOwnProperty('proficiencies')) {
-                        trait.proficiencies.forEach(function (proficiency) {
-                            newChar.proficiencies.race.push(proficiency);
-                        })
+                        trait.proficiencies.forEach((proficiency) => newChar.proficiencies.race.push(proficiency))
                     }
                 })
             })
@@ -145,16 +137,20 @@ $(document).ready(function () {
         e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
-            // data.proficiencies.forEach()
             console.log(newChar);
             $('#statistics-tab').tab('show');
         })
     })
     //function to check statistics dropdowns and disable already chosen options
-    $('.abilityScoreSelectionDropdown').change( () => reloadStatisticsTab());
+    $('.abilityScoreSelectionDropdown').change(function () {
+        reloadStatisticsTab();
+    })
+
     function reloadStatisticsTab() {
         let abilityScoreArray = [];
-        $('.abilityScoreSelection').each( () => abilityScoreArray.push(this.value));
+        $('.abilityScoreSelection').each(function () {
+            abilityScoreArray.push(this.value)
+        })
         for (let i = 8; i <= 15; i++) {
             if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
                 $('.value-' + i).prop('disabled', true);
@@ -196,7 +192,7 @@ $(document).ready(function () {
                     `</div>` +
                     `</div>`)
                 //assigns background to newChar object and takes you to proficiencies tab when you click a background
-                $('.backgroundButton').click((e) => {
+                $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
                     // console.log(newChar)
@@ -204,7 +200,7 @@ $(document).ready(function () {
                     //     console.log('has warhammers');
                     // }
                     if (background.hasOwnProperty('starting_proficiencies')) {
-                        background.starting_proficiencies.forEach((proficiency) => {
+                        background.starting_proficiencies.forEach(function (proficiency) {
                             newChar.proficiencies.background.push(proficiency);
                             console.log(newChar);
                         })
