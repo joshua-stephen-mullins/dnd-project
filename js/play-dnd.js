@@ -37,9 +37,7 @@ $(document).ready(function () {
             function languageFeaturesPopulation(e) {
                 if (newChar.race.hasOwnProperty('language_options')) {
                     $('#languages').html(`<span class="fw-bold">Languages: </span>${newChar.race.language_desc}<br><select class="text-center" id="language_selection"></select>`);
-                    newChar.race.language_options.from.options.forEach(function (option) {
-                        $('#language_selection').append(`<option value="${option.item.index}">${option.item.name}</option>`)
-                    })
+                    newChar.race.language_options.from.options.forEach((option) => $('#language_selection').append(`<option value="${option.item.index}">${option.item.name}</option>`))
                 } else {
                     $('#languages').html(`<span class="fw-bold">Languages: </span>${newChar.race.language_desc}`)
                 }
@@ -60,9 +58,7 @@ $(document).ready(function () {
                         if (trait.hasOwnProperty('proficiency_choices')) {
                             for (let i = 1; i <= trait.proficiency_choices.choose; i++) {
                                 $(`#${trait.index}`).append(`<select class="text-center" id="${trait.index}_selection${i}"></select>`);
-                                trait.proficiency_choices.from.options.forEach((function (choice) {
-                                    $('#' + trait.index + '_selection' + i).append(`<option value="${choice.item.index}">${choice.item.name}</option>`)
-                                }))
+                                trait.proficiency_choices.from.options.forEach(((choice) => $('#' + trait.index + '_selection' + i).append(`<option value="${choice.item.index}">${choice.item.name}</option>`)))
                             }
                         }
                         if (trait.hasOwnProperty('proficiencies')) {
@@ -195,21 +191,28 @@ $(document).ready(function () {
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
-                    // console.log(newChar)
-                    // if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
-                    //     console.log('has warhammers');
-                    // }
+                    console.log(newChar)
                     if (background.hasOwnProperty('starting_proficiencies')) {
-                        background.starting_proficiencies.forEach(function (proficiency) {
-                            newChar.proficiencies.background.push(proficiency);
-                            console.log(newChar);
-                        })
+
+                        for (let i = 0; i < background.starting_proficiencies.length; i++) {
+                            newChar.proficiencies.background.push(background.starting_proficiencies[i]);
+                            if (background.starting_proficiencies.indexOf(background.starting_proficiencies[i]) === (background.starting_proficiencies.length - 1)){
+                            $('#backgroundProficiencies').append(background.starting_proficiencies[i].name);
+                            } else {
+                                $('#backgroundProficiencies').append(`${background.starting_proficiencies[i].name}, `);
+                            }
+                        }
                     }
                     $('#features-tab').tab('show');
                 })
             })
         })
     })
+
+
+    // if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
+    //     console.log('has warhammers');
+    // }
 
 //change style functions
 //grasslands
