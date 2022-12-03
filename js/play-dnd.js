@@ -127,7 +127,7 @@ $(document).ready(function () {
             })
         });
     });
-    //populates subclass info when selected
+    //populates subrace info when selected
     $('.subRaceSelection').change(function (e) {
         e.preventDefault();
         if ($(this).val() === 'hill-dwarf') {
@@ -145,20 +145,16 @@ $(document).ready(function () {
         e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
+            // data.proficiencies.forEach()
             console.log(newChar);
             $('#statistics-tab').tab('show');
         })
     })
     //function to check statistics dropdowns and disable already chosen options
-    $('.abilityScoreSelectionDropdown').change(function(){
-        reloadStatisticsTab();
-    })
-
+    $('.abilityScoreSelectionDropdown').change( () => reloadStatisticsTab());
     function reloadStatisticsTab() {
         let abilityScoreArray = [];
-        $('.abilityScoreSelection').each(function () {
-            abilityScoreArray.push(this.value)
-        })
+        $('.abilityScoreSelection').each( () => abilityScoreArray.push(this.value));
         for (let i = 8; i <= 15; i++) {
             if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
                 $('.value-' + i).prop('disabled', true);
@@ -200,7 +196,7 @@ $(document).ready(function () {
                     `</div>` +
                     `</div>`)
                 //assigns background to newChar object and takes you to proficiencies tab when you click a background
-                $('.backgroundButton').click(function (e) {
+                $('.backgroundButton').click((e) => {
                     newChar.background = data;
                     e.preventDefault();
                     // console.log(newChar)
@@ -208,7 +204,7 @@ $(document).ready(function () {
                     //     console.log('has warhammers');
                     // }
                     if (background.hasOwnProperty('starting_proficiencies')) {
-                        background.starting_proficiencies.forEach(function (proficiency) {
+                        background.starting_proficiencies.forEach((proficiency) => {
                             newChar.proficiencies.background.push(proficiency);
                             console.log(newChar);
                         })
