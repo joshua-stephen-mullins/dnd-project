@@ -195,12 +195,21 @@ $(document).ready(function () {
                     if (background.hasOwnProperty('starting_proficiencies')) {
                         for (let i = 0; i < background.starting_proficiencies.length; i++) {
                             newChar.proficiencies.background.push(background.starting_proficiencies[i]);
-                            if (background.starting_proficiencies.indexOf(background.starting_proficiencies[i]) === (background.starting_proficiencies.length - 1)){
-                            $('#backgroundProficiencies').append((background.starting_proficiencies[i].name).slice(7));
+                            if (background.starting_proficiencies.indexOf(background.starting_proficiencies[i]) === (background.starting_proficiencies.length - 1)) {
+                                $('#backgroundProficiencies').append((background.starting_proficiencies[i].name).slice(7));
                             } else {
                                 $('#backgroundProficiencies').append(`${(background.starting_proficiencies[i].name).slice(7)}, `);
                             }
                         }
+                    }
+                    if (background.hasOwnProperty('language_options')) {
+                        $.get('https://www.dnd5eapi.co/api/languages').done((data) => {
+                            for (let i = 0; i < background.language_options.choose; i++) {
+                                $('#backgroundLanguages').append(`<select id="backgroundLanguagesChoice${i}"></select>`);
+                                console.log('ran function');
+                                data.results.forEach((language) => $('#backgroundLanguagesChoice' + i).append(`<option value="${language.index}">${language.name}</option>`))
+                            }
+                        })
                     }
                     $('#features-tab').tab('show');
                 })
