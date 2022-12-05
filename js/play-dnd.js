@@ -193,13 +193,12 @@ $(document).ready(function () {
                     e.preventDefault();
                     console.log(newChar)
                     if (background.hasOwnProperty('starting_proficiencies')) {
-
                         for (let i = 0; i < background.starting_proficiencies.length; i++) {
                             newChar.proficiencies.background.push(background.starting_proficiencies[i]);
                             if (background.starting_proficiencies.indexOf(background.starting_proficiencies[i]) === (background.starting_proficiencies.length - 1)){
-                            $('#backgroundProficiencies').append(background.starting_proficiencies[i].name);
+                            $('#backgroundProficiencies').append((background.starting_proficiencies[i].name).slice(7));
                             } else {
-                                $('#backgroundProficiencies').append(`${background.starting_proficiencies[i].name}, `);
+                                $('#backgroundProficiencies').append(`${(background.starting_proficiencies[i].name).slice(7)}, `);
                             }
                         }
                     }
