@@ -18,12 +18,11 @@ $(document).ready(function () {
         //retrieves race info based on race button clicked
         $.get(`https://www.dnd5eapi.co/api/races/${this.value}`).done(function (data) {
             //resets racial bonuses to 0 on statistics page - basically just here in case you go back and click a different race
-            $('.racialBonus').each(() => $('span').html('0'));
+            $('.racialBonus').each(() => $('.racialBonus span').html('0'));
             //takes page to next tab
             $('#class-tab').tab('show');
             //assigns api data to newChar object
             newChar.race = data;
-            console.log(newChar)
             //populates statistics page with racial bonuses
             $(newChar.race.ability_bonuses).each(function () {
                 $(`#racialBonus_${this.ability_score.index}`).html(this.bonus);
@@ -191,7 +190,6 @@ $(document).ready(function () {
                 $('.backgroundButton').click(function (e) {
                     newChar.background = data;
                     e.preventDefault();
-                    console.log(newChar)
                     if (background.hasOwnProperty('starting_proficiencies')) {
                         for (let i = 0; i < background.starting_proficiencies.length; i++) {
                             newChar.proficiencies.background.push(background.starting_proficiencies[i]);
@@ -206,7 +204,6 @@ $(document).ready(function () {
                         $.get('https://www.dnd5eapi.co/api/languages').done((data) => {
                             for (let i = 0; i < background.language_options.choose; i++) {
                                 $('#backgroundLanguages').append(`<select id="backgroundLanguagesChoice${i}"></select>`);
-                                console.log('ran function');
                                 data.results.forEach((language) => $('#backgroundLanguagesChoice' + i).append(`<option value="${language.index}">${language.name}</option>`))
                             }
                         })
