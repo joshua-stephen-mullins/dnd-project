@@ -209,8 +209,10 @@ $(document).ready(function () {
                         })
                     }
                     if (newChar.background.hasOwnProperty('starting_equipment')) {
-                        newChar.background.forEach(
-                            $(`#backgroundEquipment`).append()
+                        newChar.background.forEach(function (item) {
+                                $(`#backgroundEquipment`).append()
+
+                            }
                         )
                     }
                     $('#features-tab').tab('show');
