@@ -181,10 +181,10 @@ $(document).ready(function () {
                     `<p>${background.feature.name}</p>` +
                     `<p>${background.feature.desc}</p>` +
                     `<div class="pixelButtonContainer">` +
-                    `<button class="backgroundButton" value="${background.index}">` +
-                    `<div class="pixel"><p>${background.name}</p></div>` +
-                    `</button>` +
-                    `</div>` +
+                        `<button class="backgroundButton" value="${background.index}">` +
+                        `<div class="pixel"><p>${background.name}</p></div>` +
+                        `</button>` +
+                        `</div>` +
                     `</div>`)
                 //assigns background to newChar object and takes you to proficiencies tab when you click a background
                 $('.backgroundButton').click(function (e) {
