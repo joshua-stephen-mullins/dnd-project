@@ -200,13 +200,18 @@ $(document).ready(function () {
                             }
                         }
                     }
-                    if (background.hasOwnProperty('language_options')) {
+                    if (newChar.background.hasOwnProperty('language_options')) {
                         $.get('https://www.dnd5eapi.co/api/languages').done((data) => {
                             for (let i = 0; i < background.language_options.choose; i++) {
                                 $('#backgroundLanguages').append(`<select id="backgroundLanguagesChoice${i}"></select>`);
                                 data.results.forEach((language) => $('#backgroundLanguagesChoice' + i).append(`<option value="${language.index}">${language.name}</option>`))
                             }
                         })
+                    }
+                    if (newChar.background.hasOwnProperty('starting_equipment')) {
+                        newChar.background.forEach(
+                            $(`#backgroundEquipment`).append()
+                        )
                     }
                     $('#features-tab').tab('show');
                 })
