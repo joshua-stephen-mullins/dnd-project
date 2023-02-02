@@ -132,7 +132,6 @@ $(document).ready(function () {
         e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
-            console.log(newChar);
             $('#statistics-tab').tab('show');
         })
     })
@@ -147,7 +146,7 @@ $(document).ready(function () {
             abilityScoreArray.push(this.value)
         })
         for (let i = 8; i <= 15; i++) {
-            if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
+            if (abilityScoreArray.indexOf(`abilityScore-${i}`) !== -1) {
                 $(`.value-${i}`).prop('disabled', true);
             } else {
                 $(`.value-${i}`).prop('disabled', false);
