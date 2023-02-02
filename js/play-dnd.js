@@ -210,8 +210,9 @@ $(document).ready(function () {
                     }
                     if (newChar.background.hasOwnProperty('starting_equipment')) {
                         newChar.background.forEach(function (item) {
-                                $(`#backgroundEquipment`).append()
-
+                                $(`#backgroundEquipment`).append(
+                                //    insert each equipment item here
+                                )
                             }
                         )
                     }
