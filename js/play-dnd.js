@@ -148,9 +148,9 @@ $(document).ready(function () {
         })
         for (let i = 8; i <= 15; i++) {
             if (abilityScoreArray.indexOf('abilityScore-' + i) !== -1) {
-                $('.value-' + i).prop('disabled', true);
+                $(`.value-${i}`).prop('disabled', true);
             } else {
-                $('.value-' + i).prop('disabled', false);
+                $(`.value-${i}`).prop('disabled', false);
             }
             //assigns dropdown values into stats card
             $('#baseScore_str').html(parseInt(abilityScoreArray[0].substring(13)));
