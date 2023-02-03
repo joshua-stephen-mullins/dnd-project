@@ -208,9 +208,11 @@ $(document).ready(function () {
                         })
                     }
                     if (newChar.background.hasOwnProperty('starting_equipment')) {
-                        newChar.background.forEach(function (item) {
-                                $(`#backgroundEquipment`).append(
+                        newChar.background.starting_equipment.forEach(function (item) {
+                            console.log(item);
+                            $(`#backgroundEquipment`).append(
                                 //    insert each equipment item here
+                                    `${item.equipment.name}`
                                 )
                             }
                         )
