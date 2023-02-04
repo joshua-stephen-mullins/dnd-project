@@ -4,6 +4,8 @@ body {
 html, body {
     margin: 0;
     padding: 0;
+    color: #222222;
+    background-color: #f2f2f2;
 }
 .font-press {
     font-family: 'Press Start 2P', monospace;
@@ -13,10 +15,10 @@ html, body {
 }
 .pixel-box {
     box-shadow:
-                -8px 0 0 0 black,
-                8px 0 0 0 black,
-                0 -8px 0 0 black,
-                0 8px 0 0 black;
+                -8px 0 0 0 #222222,
+                8px 0 0 0 #222222,
+                0 -8px 0 0 #222222,
+                0 8px 0 0 #222222;
 }
 .characterCreationTab, .featuresTab{
     border: none;
@@ -43,7 +45,7 @@ html, body {
 }
 .pixel {
     font-size: 25px;
-    color: white;
+    color: #f2f2f2;
     height: auto;
     margin: 10px;
     font-family: 'VT323', serif;
@@ -72,20 +74,21 @@ html, body {
     margin: -20px -20px;
     line-height: 20px;
     padding: 10px 20px;
-    background: #000000;
+    background: #222222;
     background:
-            linear-gradient(135deg, transparent 10px, #000000 0) top left,
-            linear-gradient(225deg, transparent 10px, #000000 0) top right,
-            linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-            linear-gradient(45deg,  transparent 10px, #000000 0) bottom left;
+            linear-gradient(135deg, transparent 10px, #222222 0) top left,
+            linear-gradient(225deg, transparent 10px, #222222 0) top right,
+            linear-gradient(315deg, transparent 10px, #222222 0) bottom right,
+            linear-gradient(45deg,  transparent 10px, #222222 0) bottom left;
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-image:
-            radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #000000 15px),
-            radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px),
-            radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
-            radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
+            radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #222222 15px),
+            radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #222222 15px),
+            radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #222222 15px),
+            radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #222222 15px);
 }
+
 /*class container styling*/
 .classContainer img{
     width: 9rem;
