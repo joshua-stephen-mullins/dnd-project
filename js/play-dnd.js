@@ -134,6 +134,7 @@ $(document).ready(function () {
             newChar.class = data;
             console.log(newChar.class);
             $(`#classHitDie`).html(`d${newChar.class.hit_die}`);
+            $(`#classProficiencySelection`).html(`d${newChar.class.hit_die}`);
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
             $('#statistics-tab').tab('show');
         })
