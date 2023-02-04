@@ -180,10 +180,10 @@ $(document).ready(function () {
                     `<p>${background.feature.name}</p>` +
                     `<p>${background.feature.desc}</p>` +
                     `<div class="pixelButtonContainer">` +
-                        `<button class="backgroundButton" value="${background.index}">` +
-                        `<div class="pixel"><p>${background.name}</p></div>` +
-                        `</button>` +
-                        `</div>` +
+                    `<button class="backgroundButton" value="${background.index}">` +
+                    `<div class="pixel"><p>${background.name}</p></div>` +
+                    `</button>` +
+                    `</div>` +
                     `</div>`)
                 //assigns background to newChar object and takes you to proficiencies tab when you click a background
                 $('.backgroundButton').click(function (e) {
@@ -210,14 +210,21 @@ $(document).ready(function () {
                     if (newChar.background.hasOwnProperty('starting_equipment')) {
                         newChar.background.starting_equipment.forEach(function (item) {
                             $(`#backgroundEquipment`).append(
-                                    `${item.equipment.name}`
-                                )
-                            })
+                                `${item.equipment.name}`
+                            )
+                        })
                     }
                     if (newChar.background.hasOwnProperty('starting_equipment_options')) {
                         $(`#backgroundEquipment`).append(`<select id="backgroundEquipmentChoices"></select>`);
-                        $(`#backgroundEquipmentChoices`)
+                        $.get(`https://www.dnd5eapi.co${newChar.background.starting_equipment_options[0].from.equipment_category.url}`).done((data) => {
+                            console.log(data);
+                            data.equipment.forEach(function(item){
+                                $(`#backgroundEquipmentChoices`).append(`<option value="${item.index}">${item.name}</option>`)
+                            })
+                        })
+
                     }
+                    newChar.background.starting_equipment_options
                     $('#features-tab').tab('show');
                 })
             })
