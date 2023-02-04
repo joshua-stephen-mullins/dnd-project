@@ -132,6 +132,9 @@ $(document).ready(function () {
         e.preventDefault();
         $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
             newChar.class = data;
+            console.log(newChar.class);
+            $(`#classHitDie`).html(`d${newChar.class.hit_die}`);
+            $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
             $('#statistics-tab').tab('show');
         })
     })
