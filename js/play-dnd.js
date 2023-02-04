@@ -209,13 +209,14 @@ $(document).ready(function () {
                     }
                     if (newChar.background.hasOwnProperty('starting_equipment')) {
                         newChar.background.starting_equipment.forEach(function (item) {
-                            console.log(item);
                             $(`#backgroundEquipment`).append(
-                                //    insert each equipment item here
                                     `${item.equipment.name}`
                                 )
-                            }
-                        )
+                            })
+                    }
+                    if (newChar.background.hasOwnProperty('starting_equipment_options')) {
+                        $(`#backgroundEquipment`).append(`<select id="backgroundEquipmentChoices"></select>`);
+                        $(`#backgroundEquipmentChoices`)
                     }
                     $('#features-tab').tab('show');
                 })
