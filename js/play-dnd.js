@@ -130,7 +130,7 @@ $(document).ready(function () {
     //assigns a class when a class card is clicked and takes you to statistics tab when you click a class
     $('.classButton').click(function (e) {
         e.preventDefault();
-        $.get('https://www.dnd5eapi.co/api/classes/' + this.value).done(function (data) {
+        $.get(`https://www.dnd5eapi.co/api/classes/${this.value}`).done(function (data) {
             newChar.class = data;
             console.log(newChar.class);
             $(`#classHitDie`).html(`d${newChar.class.hit_die}`);
@@ -143,6 +143,11 @@ $(document).ready(function () {
                     }
                 }
             }
+            newChar.class.proficiency_choices.forEach(function (choice){
+                $(`#classProficienciesChoices`).append(`
+                <p class="text-start">${choice.desc}</p>
+                `)
+            })
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
             $('#statistics-tab').tab('show');
         })
