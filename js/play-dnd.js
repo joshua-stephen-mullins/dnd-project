@@ -134,7 +134,15 @@ $(document).ready(function () {
             newChar.class = data;
             console.log(newChar.class);
             $(`#classHitDie`).html(`d${newChar.class.hit_die}`);
-            $(`#classProficiencySelection`).html(`d${newChar.class.hit_die}`);
+            for (let i = 0 ; i < newChar.class.proficiencies.length; i++) {
+                if (!newChar.class.proficiencies[i].name.includes('Saving')){
+                    if (i === 0){
+                        $(`#classProficiencies`).append(newChar.class.proficiencies[i].name)
+                    } else {
+                        $(`#classProficiencies`).append(`, ${newChar.class.proficiencies[i].name}`)
+                    }
+                }
+            }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
             $('#statistics-tab').tab('show');
         })
