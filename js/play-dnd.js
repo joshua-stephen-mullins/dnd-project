@@ -145,7 +145,7 @@ $(document).ready(function () {
             }
             for (let j = 0; j < newChar.class.proficiency_choices.length; j++) {
                 $(`#classProficienciesChoices`).append(`
-                <p class="text-start" id="classProficiencyChoice_${j}">${newChar.class.proficiency_choices[j].desc}</p>
+                <p class="text-start" id="classProficiencyChoice_${j}">${newChar.class.proficiency_choices[j].desc}: </p>
                 `)
                 for (let i = 0; i < newChar.class.proficiency_choices[j].choose; i++) {
                     $(`#classProficiencyChoice_${j}`).append(`
