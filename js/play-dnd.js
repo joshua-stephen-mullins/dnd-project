@@ -134,25 +134,35 @@ $(document).ready(function () {
             newChar.class = data;
             console.log(newChar.class);
             $(`#classHitDie`).html(`d${newChar.class.hit_die}`);
-            for (let i = 0 ; i < newChar.class.proficiencies.length; i++) {
-                if (!newChar.class.proficiencies[i].name.includes('Saving')){
-                    if (i === 0){
+            for (let i = 0; i < newChar.class.proficiencies.length; i++) {
+                if (!newChar.class.proficiencies[i].name.includes('Saving')) {
+                    if (i === 0) {
                         $(`#classProficiencies`).append(newChar.class.proficiencies[i].name)
                     } else {
                         $(`#classProficiencies`).append(`, ${newChar.class.proficiencies[i].name}`)
                     }
                 }
             }
-            newChar.class.proficiency_choices.forEach(function (choice){
+            for (let j = 0; j < newChar.class.proficiency_choices.length; j++) {
                 $(`#classProficienciesChoices`).append(`
-                <p class="text-start">${choice.desc}</p>
+                <p class="text-start" id="classProficiencyChoice_${j}">${newChar.class.proficiency_choices[j].desc}</p>
                 `)
-            })
+                for (let i = 0; i < newChar.class.proficiency_choices[j].choose; i++) {
+                    $(`#classProficiencyChoice_${j}`).append(`
+                    <select id="classProficiencyChoice_${j}_selection_${i}"></select>
+                    `)
+                    newChar.class.proficiency_choices[j].from.options.forEach(function(option){
+                        $(`#classProficiencyChoice_${j}_selection_${i}`).append(`
+                        <option value="${option.item.index}">${option.item.name}</option>
+                        `)
+                    })
+                }
+            }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
             $('#statistics-tab').tab('show');
         })
     })
-    //function to check statistics dropdowns and disable already chosen options
+//function to check statistics dropdowns and disable already chosen options
     $('.abilityScoreSelectionDropdown').change(function () {
         reloadStatisticsTab();
     })
@@ -185,7 +195,7 @@ $(document).ready(function () {
         }
     }
 
-    //backgrounds tab functions
+//backgrounds tab functions
     $.get('https://www.dnd5eapi.co/api/backgrounds/').done(function (data) {
         let backgrounds = data.results;
         backgrounds.forEach(function (background) {
@@ -235,7 +245,7 @@ $(document).ready(function () {
                         $(`#backgroundEquipment`).append(`<select id="backgroundEquipmentChoices"></select>`);
                         $.get(`https://www.dnd5eapi.co${newChar.background.starting_equipment_options[0].from.equipment_category.url}`).done((data) => {
                             console.log(data);
-                            data.equipment.forEach(function(item){
+                            data.equipment.forEach(function (item) {
                                 $(`#backgroundEquipmentChoices`).append(`<option value="${item.index}">${item.name}</option>`)
                             })
                         })
@@ -249,9 +259,9 @@ $(document).ready(function () {
     })
 
 
-    // if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
-    //     console.log('has warhammers');
-    // }
+// if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
+//     console.log('has warhammers');
+// }
 
 //change style functions
 //grasslands
