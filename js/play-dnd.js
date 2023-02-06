@@ -184,8 +184,24 @@ $(document).ready(function () {
                 }
                 for (let i = 0; i < newChar.class.starting_equipment_options.length; i++) {
                     $(`#classEquipmentChoices`).append(`
-                <p class="text-start" id="classEquipmentChoice_${j}">${newChar.class.starting_equipment_options[i].desc}: </p>
+                <p class="text-start" id="classEquipmentChoice_${i}">${newChar.class.starting_equipment_options[i].desc}: </p>
                 `)
+                    for (let j = 0; j < newChar.class.starting_equipment_options[i].choose; j++) {
+                        $(`#classEquipmentChoice_${i}`).append(`
+                        <select id="classEquipmentChoice_${i}_choice_${j}"></select>
+                        `)
+                    }
+                    newChar.class.starting_equipment_options[i].from.options.forEach(function (option) {
+                        if (option.option_type === "counted_reference") {
+                            $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
+                            <option value="${option.of.index}">${option.of.name}</option>
+                            `)
+                        } else if ((option.option_type === "choice") || (option.from.equipment_category.index === "druidic-foci") || (option.from.equipment_category.index === "holy-symbols")){
+                            $.get(`https://www.dnd5eapi.co${option.choice.from.equipment_category.url}`).done(function (data) {
+                                console.log(data);
+                            })
+                        }
+                    })
                 }
             }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
