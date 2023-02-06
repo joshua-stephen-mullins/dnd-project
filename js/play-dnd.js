@@ -151,11 +151,21 @@ $(document).ready(function () {
                     $(`#classProficiencyChoice_${j}`).append(`
                     <select id="classProficiencyChoice_${j}_selection_${i}"></select>
                     `)
-                    newChar.class.proficiency_choices[j].from.options.forEach(function(option){
-                        $(`#classProficiencyChoice_${j}_selection_${i}`).append(`
+                    if (newChar.class.proficiency_choices[j].from.options[0].hasOwnProperty('choice')) {
+                        newChar.class.proficiency_choices[j].from.options.forEach(function (option) {
+                            option.choice.from.options.forEach(function(choice){
+                                $(`#classProficiencyChoice_${j}_selection_${i}`).append(`
+                        <option>${choice.item.name}</option>
+                        `)
+                            })
+                        })
+                    } else {
+                        newChar.class.proficiency_choices[j].from.options.forEach(function (option) {
+                            $(`#classProficiencyChoice_${j}_selection_${i}`).append(`
                         <option value="${option.item.index}">${option.item.name}</option>
                         `)
-                    })
+                        })
+                    }
                 }
             }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
