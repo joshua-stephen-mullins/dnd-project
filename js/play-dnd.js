@@ -153,7 +153,7 @@ $(document).ready(function () {
                     `)
                     if (newChar.class.proficiency_choices[j].from.options[0].hasOwnProperty('choice')) {
                         newChar.class.proficiency_choices[j].from.options.forEach(function (option) {
-                            option.choice.from.options.forEach(function(choice){
+                            option.choice.from.options.forEach(function (choice) {
                                 $(`#classProficiencyChoice_${j}_selection_${i}`).append(`
                         <option>${choice.item.name}</option>
                         `)
@@ -166,6 +166,26 @@ $(document).ready(function () {
                         `)
                         })
                     }
+                }
+                for (let i = 0; i < newChar.class.starting_equipment.length; i++) {
+                    if (i === 0) {
+                        if (newChar.class.starting_equipment[i].quantity !== 1) {
+                            $(`#classEquipment`).append(`${newChar.class.starting_equipment[i].quantity}x ${newChar.class.starting_equipment[i].equipment.name}`)
+                        } else {
+                            $(`#classEquipment`).append(`${newChar.class.starting_equipment[i].equipment.name}`)
+                        }
+                    } else {
+                        if (newChar.class.starting_equipment[i].quantity !== 1) {
+                            $(`#classEquipment`).append(`, ${newChar.class.starting_equipment[i].quantity}x ${newChar.class.starting_equipment[i].equipment.name}`)
+                        } else {
+                            $(`#classEquipment`).append(`, ${newChar.class.starting_equipment[i].equipment.name}`)
+                        }
+                    }
+                }
+                for (let i = 0; i < newChar.class.starting_equipment_options.length; i++) {
+                    $(`#classEquipmentChoices`).append(`
+                <p class="text-start" id="classEquipmentChoice_${j}">${newChar.class.starting_equipment_options[i].desc}: </p>
+                `)
                 }
             }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
@@ -239,7 +259,7 @@ $(document).ready(function () {
                     if (newChar.background.hasOwnProperty('language_options')) {
                         $.get('https://www.dnd5eapi.co/api/languages').done((data) => {
                             for (let i = 0; i < background.language_options.choose; i++) {
-                                $('#backgroundLanguages').append(`<select id="backgroundLanguagesChoice${i}"></select>`);
+                                $('#backgroundLanguages').append(`<select id="backgroundLanguagesChoice${i}"></select> `);
                                 data.results.forEach((language) => $('#backgroundLanguagesChoice' + i).append(`<option value="${language.index}">${language.name}</option>`))
                             }
                         })
@@ -254,7 +274,6 @@ $(document).ready(function () {
                     if (newChar.background.hasOwnProperty('starting_equipment_options')) {
                         $(`#backgroundEquipment`).append(`<select id="backgroundEquipmentChoices"></select>`);
                         $.get(`https://www.dnd5eapi.co${newChar.background.starting_equipment_options[0].from.equipment_category.url}`).done((data) => {
-                            console.log(data);
                             data.equipment.forEach(function (item) {
                                 $(`#backgroundEquipmentChoices`).append(`<option value="${item.index}">${item.name}</option>`)
                             })
