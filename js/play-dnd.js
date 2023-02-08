@@ -192,32 +192,43 @@ $(document).ready(function () {
                     $(`#classEquipmentChoice_${i}`).append(`
                         <select id="classEquipmentChoice_${i}_choice_${j}"></select>
                         `)
-                    newChar.class.starting_equipment_options[i].from.options.forEach(function (option) {
-                        if (option.option_type === "counted_reference") {
-                            if (option.hasOwnProperty("count") && option.count !== 1) {
-                                $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
-                            <option value="${option.of.index}">${option.count}x ${option.of.name}</option>
-                            `)
-                            } else {
-                                $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
-                            <option value="${option.of.index}">${option.of.name}</option>
-                            `)
-                            }
-                        } else if ((option.option_type === "choice")){
-                            $.get(`https://www.dnd5eapi.co${option.choice.from.equipment_category.url}`).done(function (data) {
-                                console.log(data);
-                                data.equipment.forEach(function(item){
+                    if (newChar.class.starting_equipment_options[i].from.hasOwnProperty("options")) {
+                        for (let p = 0; p < newChar.class.starting_equipment_options[i].from.options.length; p++) {
+                            if (newChar.class.starting_equipment_options[i].from.options[p].option_type === "counted_reference") {
+                                if (newChar.class.starting_equipment_options[i].from.options[p].hasOwnProperty("count") && newChar.class.starting_equipment_options[i].from.options[p].count !== 1) {
                                     $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
+                            <option value="${newChar.class.starting_equipment_options[i].from.options[p].of.index}">${newChar.class.starting_equipment_options[i].from.options[p].count}x ${newChar.class.starting_equipment_options[i].from.options[p].of.name}</option>
+                            `)
+                                } else {
+                                    $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
+                            <option value="${newChar.class.starting_equipment_options[i].from.options[p].of.index}">${newChar.class.starting_equipment_options[i].from.options[p].of.name}</option>
+                            `)
+                                }
+                            } else if ((newChar.class.starting_equipment_options[i].from.options[p].option_type === "choice")) {
+                                $.get(`https://www.dnd5eapi.co${newChar.class.starting_equipment_options[i].from.options[p].choice.from.equipment_category.url}`).done(function (data) {
+                                    console.log(data);
+                                    data.equipment.forEach(function (item) {
+                                        $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
                             <option value="${item.index}">${item.name}</option>
                             `)
+                                    })
                                 })
-                            })
-                        } else if (option.option_type === "multiple") {
-                            $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
-                            <option value="${option.items[0].of.index}">${option.items[0].of.name}</option>
+                            } else if (newChar.class.starting_equipment_options[i].from.options[p].option_type === "multiple") {
+                                $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
+                            <option value="${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}">${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.name}</option>
                             `)
+                            }
                         }
-                    })
+                    } else {
+                        $.get(`https://www.dnd5eapi.co${newChar.class.starting_equipment_options[i].from.equipment_category.url}`).done(function (data) {
+                            console.log(data);
+                            data.equipment.forEach(function (item) {
+                                $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
+                            <option value="${item.index}">${item.name}</option>
+                            `)
+                            })
+                        })
+                    }
                 }
             }
             $(`#classSavingThrows`).html(`${newChar.class.saving_throws[0].name}, ${newChar.class.saving_throws[1].name}`);
