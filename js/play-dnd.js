@@ -215,8 +215,20 @@ $(document).ready(function () {
                                 })
                             } else if (newChar.class.starting_equipment_options[i].from.options[p].option_type === "multiple") {
                                 $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
-                            <option value="${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}">${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.name}</option>
+                            <option id="${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}"></option>
                             `)
+                            //    option if you wanted to display all of the multiples in the select option
+                                for (let q = 0; q < newChar.class.starting_equipment_options[i].from.options[p].items.length; q++) {
+                                    if (q === 0) {
+                                        $(`#${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}`).append(`
+                            ${newChar.class.starting_equipment_options[i].from.options[p].items[q].of.name}
+                            `)
+                                    } else {
+                                        $(`#${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}`).append(`
+                             / ${newChar.class.starting_equipment_options[i].from.options[p].items[q].of.name}
+                            `)
+                                    }
+                                }
                             }
                         }
                     } else {
