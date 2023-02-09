@@ -330,11 +330,6 @@ $(document).ready(function () {
         })
     })
 
-
-// if (JSON.stringify(newChar.proficiencies).indexOf('warhammers') > -1){
-//     console.log('has warhammers');
-// }
-
 //change style functions
 //grasslands
     function activateGrasslandsStyle() {
