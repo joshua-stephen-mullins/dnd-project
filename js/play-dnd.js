@@ -215,18 +215,24 @@ $(document).ready(function () {
                                 })
                             } else if (newChar.class.starting_equipment_options[i].from.options[p].option_type === "multiple") {
                                 $(`#classEquipmentChoice_${i}_choice_${j}`).append(`
-                            <option id="${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}"></option>
+                            <option id="classEquipmentChoice_${i}_choice_${j}_option"></option>
                             `)
-                            //    option if you wanted to display all of the multiples in the select option
+                                //    option if you wanted to display all of the multiples in the select option
                                 for (let q = 0; q < newChar.class.starting_equipment_options[i].from.options[p].items.length; q++) {
-                                    if (q === 0) {
-                                        $(`#${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}`).append(`
+                                    if (newChar.class.starting_equipment_options[i].from.options[p].items[q].option_type === 'counted_reference') {
+                                        if (q === 0) {
+                                            $(`#classEquipmentChoice_${i}_choice_${j}_option`).append(`
                             ${newChar.class.starting_equipment_options[i].from.options[p].items[q].of.name}
                             `)
-                                    } else {
-                                        $(`#${newChar.class.starting_equipment_options[i].from.options[p].items[0].of.index}`).append(`
+                                        } else {
+                                            $(`#classEquipmentChoice_${i}_choice_${j}_option`).append(`
                              / ${newChar.class.starting_equipment_options[i].from.options[p].items[q].of.name}
                             `)
+                                        }
+                                    } else if (newChar.class.starting_equipment_options[i].from.options[p].items[q].option_type === 'choice') {
+                                        $.get(`https://www.dnd5eapi.co${newChar.class.starting_equipment_options[i].from.options[p].items[q].choice.from.equipment_category.url}`).done(function (data) {
+                                            console.log(data);
+                                        })
                                     }
                                 }
                             }
@@ -390,6 +396,5 @@ $(document).ready(function () {
         }
     }
 
-    grasslandsStyle.addEventListener('click', activateGrasslandsStyleClassPage);
 
 })
