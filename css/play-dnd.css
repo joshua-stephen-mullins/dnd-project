@@ -94,6 +94,11 @@ select {
     border: 3px solid #222222;
 }
 
+.sectionContainer {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
 /*class container styling*/
 .classContainer img{
     width: 9rem;
