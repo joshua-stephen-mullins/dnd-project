@@ -97,6 +97,8 @@ select {
 .sectionContainer {
     margin-right: 5px;
     margin-left: 5px;
+    padding: 1px;
+    box-sizing: border-box;
 }
 
 /*class container styling*/
