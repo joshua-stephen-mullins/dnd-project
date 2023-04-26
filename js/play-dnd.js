@@ -348,4 +348,9 @@ $(document).ready(function () {
         })
     })
 
+
+    $.get('https://www.dnd5eapi.co/api/rules/adventuring/').done(function (data) {
+    let adventuring = data;
+
+    })
 })
