@@ -353,7 +353,7 @@ $(document).ready(function () {
         let adventuring = data;
         data.forEach(function (section) {
             $(`#rulesPage`).append(`
-            
+            <h1> $(section.name) </h1>
             `)
         })
     })
