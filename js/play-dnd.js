@@ -353,8 +353,12 @@ $(document).ready(function () {
         let adventuring = data;
         data.forEach(function (section) {
             $(`#rulesPage`).append(`
-            <h1> $(section.name) </h1>
+            <h1> ${section.name} </h1>
+            <div id="${section.name}.content"</div>
             `)
+            $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
+
+            })
         })
     })
 })
