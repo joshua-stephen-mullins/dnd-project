@@ -358,6 +358,9 @@ $(document).ready(function () {
             `)
             $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
             let sectionData = data;
+                $(`#${section.name}`).html(`
+                ${sectionData.desc}
+                `)
             })
         })
     })
