@@ -360,6 +360,7 @@ $(document).ready(function () {
             let sectionData = data;
                 $(`#${section.name}`).html(`
                 ${sectionData.desc}
+                
                 `)
             })
         })
