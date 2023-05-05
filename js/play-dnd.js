@@ -357,9 +357,8 @@ $(document).ready(function () {
             <div id="${section.name}.content"</div>
             `)
             $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
-            let sectionData = data;
                 $(`#${section.name}`).html(`
-                ${sectionData.desc}
+                ${data.desc}
                 
                 `)
             })
