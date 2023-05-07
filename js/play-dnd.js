@@ -364,7 +364,7 @@ $(document).ready(function () {
         })
     })
 
-    $.get('https://www.dnd5eapi.co/api/rules//').done(function (data) {
+    $.get('https://www.dnd5eapi.co/api/rules/').done(function (data) {
         let adventuring = data;
         data.forEach(function (section) {
             $(`#rulesPage`).append(`
