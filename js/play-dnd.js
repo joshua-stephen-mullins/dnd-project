@@ -351,7 +351,7 @@ $(document).ready(function () {
 
     $.get('https://www.dnd5eapi.co/api/rules/adventuring/').done(function (data) {
         let adventuring = data;
-        console.log(adventuring);
+        // console.log(adventuring);
         adventuring.subsections.forEach(function (section) {
             $(`#rulesPage`).append(`
             <h1> ${section.name} </h1>
