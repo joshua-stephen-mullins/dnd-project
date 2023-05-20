@@ -357,7 +357,7 @@ $(document).ready(function () {
             <h1> ${section.name} </h1>
             <div id="${section.index}.content"></div>
             `)
-            console.log(section);
+          //  console.log(section);
             $.get('https://www.dnd5eapi.co' + section.url).done(function (sectionData) {
                 console.log(sectionData);
                 $(`#${section.index}.content`).append(`
