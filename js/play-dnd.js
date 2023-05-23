@@ -367,18 +367,18 @@ $(document).ready(function () {
         })
     })
 
-    // $.get('https://www.dnd5eapi.co/api/rules/').done(function (data) {
-    //     let adventuring = data;
-    //     data.forEach(function (section) {
-    //         $(`#rulesPage`).append(`
-    //         <h1> ${section.name} </h1>
-    //         <div id="${section.name}.content"</div>
-    //         `)
-    //         $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
-    //             $(`#${section.name}`).html(`
-    //             ${data.desc}
-    //             `)
-    //         })
-    //     })
-    // })
+     $.get('https://www.dnd5eapi.co/api/rules/').done(function (data) {
+         let adventuring = data;
+         data.forEach(function (section) {
+             $(`#rulesPage`).append(`
+             <h1> ${section.name} </h1>
+             <div id="${section.name}.content"</div>
+             `)
+             $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
+                 $(`#${section.name}`).html(`
+                ${data.desc}
+                 `)
+             })
+         })
+     })
 })
