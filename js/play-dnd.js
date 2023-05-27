@@ -369,7 +369,10 @@ $(document).ready(function () {
 
      $.get('https://www.dnd5eapi.co/api/rules/appendix').done(function (data) {
          let rules = data;
+                // console.log(rules);
+
          data.forEach(function (section) {
+                       //  console.log(section);
              $(`#rulesPage`).append(`
              <h1> ${section.name} </h1>
              <div id="${section.name}.content"</div>
