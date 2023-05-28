@@ -378,6 +378,8 @@ $(document).ready(function () {
              <div id="${section.name}.content"</div>
              `)
              $.get('https://www.dnd5eapi.co/' + section.url).done(function (data) {
+                                 // console.log(data);
+
                  $(`#${section.name}`).html(`
                 ${data.desc}
                  `)
