@@ -383,7 +383,7 @@ $(document).ready(function () {
          })
      })
     
-         $.get('https://www.dnd5eapi.co/api/rules/appendix').done(function (data) {
+         $.get('https://www.dnd5eapi.co/api/rules/combat').done(function (data) {
          let rules = data;
          console.log(data);
          data.forEach(function (section) {
